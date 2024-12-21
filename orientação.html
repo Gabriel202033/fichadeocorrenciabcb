@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficha de orientações</title>
+    <script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            border: 1px solid #000;
+            padding: 20px;
+            box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .signature {
+            margin-top: 30px;
+            text-align: right;
+        }
+        .signature label {
+            margin-right: 5px;
+        }
+        .signature select {
+            margin: 5px 0;
+            padding: 5px;
+            font-size: 14px;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 12px;
+            text-align: center;
+        }
+        .print-button {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .print-button button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .print-button button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Aumenta o tamanho da caixa de texto */
+        textarea#editor {
+            width: 100%;
+            height: 400px;  /* Tamanho maior da altura */
+            font-size: 16px; /* Ajuste o tamanho da fonte, se necessário */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>Ficha de orientações</h2>
+        </div>
+        <label for="paciente">Paciente:</label>
+        <input type="text" id="paciente" style="width: 100%; border: none; border-bottom: 1px solid #000; margin-bottom: 20px; font-size: 16px;">
+
+        <label for="editor">Orientações:</label>
+        <textarea name="editor" id="editor">Escreva aqui as orientações...</textarea>
+
+        <div class="signature">
+            <label for="nome-profissional">Nome:</label>
+            <select id="nome-profissional">
+                <option value="João Gabriel da Silva">João Gabriel da Silva</option>
+                <option value="profissional 2">profissional 2</option>
+                <option value="profissional 3">profissional 3</option>
+            </select>
+
+            <label for="funcao">Função:</label>
+            <select id="funcao">
+                <option value="Bombeiro Civil">Bombeiro Civil</option>
+                <option value="Socorrista">Socorrista</option>
+            </select>
+
+            <label for="registro">Registro:</label>
+            <select id="registro">
+                <option value="11601744">11601744</option>
+                <option value="0000">0000</option>
+                <option value="0000">0000</option>
+            </select>
+        </div>
+      
+      <div class="signature">
+            <label for="nome-profissional">Nome:</label>
+            <select id="nome-profissional">
+                <option value="João Gabriel da Silva">João Gabriel da Silva</option>
+                <option value="profissional 2">profissional 2</option>
+                <option value="profissional 3">profissional 3</option>
+            </select>
+
+            <label for="funcao">Função:</label>
+            <select id="funcao">
+                <option value="Bombeiro Civil">Bombeiro Civil</option>
+                <option value="Socorrista">Socorrista</option>
+            </select>
+
+            <label for="registro">Registro:</label>
+            <select id="registro">
+                <option value="11601744">11601744</option>
+                <option value="0000">0000</option>
+                <option value="0000">0000</option>
+            </select>
+        </div>
+
+        <div class="print-button">
+            <button onclick="window.print()">Imprimir Página</button>
+        </div>
+
+        <div class="footer">
+            Dúvidas: (87) 99677-7345 | E-mail: gabrielaph2000@gmail.com <br>
+            Conforme NBR 14608/2021 - Prevenção e atendimento a emergências.
+        </div>
+    </div>
+
+    <script>
+        CKEDITOR.replace('editor', {
+            height: 400, // Aumenta a altura do editor
+            width: '100%' // A largura será 100% do contêiner
+        });
+    </script>
+</body>
+</html>
