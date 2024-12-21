@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f3f3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-container {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        .login-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .login-container input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .login-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .login-container button:hover {
+            background-color: #0056b3;
+        }
+        .login-container select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Acessar sistema</h2>
+        <form id="loginForm">
+            <select id="fichaSelect" required>
+                <option value="" disabled selected>Selecione um sistema</option>
+                <option value="ficha">Regístro de Ocorēcia</option>
+                <option value="orientação">Ficha de Orientações</option>
+            </select>
+            <input type="number" id="username" placeholder="Usuário (apenas números)" required>
+            <input type="password" id="password" inputmode="numeric" placeholder="Senha (apenas números)" required>
+            <button type="submit">Entrar</button>
+        </form>
+    </div>
+
+    <script>
+        // Lista de usuários válidos para a Ficha Coletiva
+        const validUsersFicha = {
+            15191585488: 21012006,
+            54321: 9876,
+            11111: 2222
+        };
+
+        // Credenciais exclusivas para a Ficha Individual
+        const validIndividualUser = {
+            username: 15191585488,  // Login exclusivo
+            password: 21012006   // Senha exclusiva
+        };
+
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const selectedFicha = document.getElementById('fichaSelect').value;
+            const username = parseInt(document.getElementById('username').value, 10); // Converte para número
+            const password = parseInt(document.getElementById('password').value, 10); // Converte para número
+
+            if (selectedFicha === "ficha") {
+                // Verifica usuários válidos para a Ficha Coletiva
+                if (validUsersFicha[username] === password) {
+                    window.location.href = "ficha.html"; // Redireciona para a Ficha Coletiva
+                } else {
+                    alert("Usuário ou senha inválidos para a Ficha Coletiva!");
+                }
+            } else if (selectedFicha === "orientação") {
+                // Verifica login exclusivo para a Ficha Individual
+                if (username === validIndividualUser.username && password === validIndividualUser.password) {
+                    window.location.href = "orientação.html"; // Redireciona para a Ficha Individual
+                } else {
+                    alert("Não autorizado!");
+                }
+            } else {
+                alert("Selecione uma ficha válida!");
+            }
+        });
+    </script>
+</body>
+</html>

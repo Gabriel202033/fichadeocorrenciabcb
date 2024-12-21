@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Ocorrência BCP</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        fieldset {
+            margin-bottom: 20px;
+        }
+        label {
+            font-weight: bold;
+        }
+        input, select, textarea {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="formulario">
+        <h1>Registro de Ocorrência BCP</h1>
+        <form id="ocorrencia-form">
+            
+            
+            <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    
+ 
+    
+    <style>
+        <body> {
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        img {
+            max-width: 15%;
+            height: auto;
+        }
+    </style>
+<body>
+    <img src="Logo_bombeiro_BCB.png" alt="Logo">
+    
+    <style>
+        <body> {
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        img {
+            max-width: 15%;
+            height: auto;
+        }
+    </style>
+<body>
+    <img src="Logo_socorrista_BCP.png" alt="Logo">
+    
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Ocorrência BCP</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        
+        
+
+        <form id="ocorrencia-form" method="POST" action="save.php">
+            <fieldset>
+                <legend>Local da Ocorrência</legend>
+                <label for="endereco">Endereço:</label>
+                <input type="text" id="endereco" name="endereco" required>
+                
+                <label for="bairro">Bairro:</label>
+                <input type="text" id="bairro" name="bairro" required>
+                
+                <label for="cidade">Cidade:</label>
+                <input type="text" id="cidade" name="cidade" required>
+              
+              <label for="data">Data</label>
+              <input type="date"
+                
+              <label for="hora">Hora</label>
+              <input type="time" 
+                <fieldset></fieldset>
+                              
+            <fieldset>
+                <legend>Dados da Vítima</legend>
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+                
+                <label for="idade">Idade:</label>
+                <input type="number" id="idade" name="idade" required>
+                
+                <label for="sexo">Sexo:</label>
+                <select id="sexo" name="sexo" required>
+                    <option value="M">Masculino</option>
+                    <option value="F">Feminino</option>
+                </select>
+                
+              <label for="documento">Documento</label>
+                <input type="text" id="documento" name="documento" required>
+                
+                <label for="telefone">Telefone</label>
+                <input type="number" id="telefone" name="telefone" required>
+                </p>
+                    
+                <label for="endereco">Endereço:</label>
+                <input type="text" id="endereco" name="endereco" required>
+                
+                <label for="bairro">Bairro:</label>
+                <input type="text" id="bairro" name="bairro" required>
+                
+                <label for="cidade">Cidade:</label>
+                <input type="text" id="cidade" name="cidade" required>
+                 </p>
+                  <legend>Acompanhante</legend>
+                  <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+                
+                <label for="idade">Idade:</label>
+                <input type="number" id="idade" name="idade" required>
+                  
+                  <label form="gral de parentesco">Gral de parentesco</label>
+                  <input type="text" id="gral de parentesco" name="gral de parentesco" required>
+                  
+                   <label for="telefone">Telefone</label>
+                <input type="number" id="telefone" name="telefone" required>
+            </fieldset>
+            
+            <fieldset>
+                <legend>Dados Clínicos</legend>
+                <label for="pa">PA(mmhg):</label>
+                <input type="text" id="pa" name="pa" required>
+                
+                <label for="fc">FC(bpm):</label>
+                <input type="text" id="fc" name="fc" required>
+                
+                <label for="fr">FR(rpm):</label>
+                <input type="text" id="fr" name="fr" required>
+                
+                <label for="saturacao">SPO2%:</label>
+                <input type="text" id="saturacao" name="saturacao" required>
+              
+                <label form="temperatura">T°C</label>
+                <input type="text" id="temperatura" name="temperatura" required>
+              
+                <label form="glicose">HGT(mmdl)</label>
+                <input type="text" id="HGT" name="HGT" required>
+                </p>
+                <legend>Segunda avaliação</legend>
+                <label for="pa">PA(mmhg):</label>
+                <input type="text" id="pa" name="pa" required>
+                
+                <label for="fc">FC(bpm):</label>
+                <input type="text" id="fc" name="fc" required>
+                
+                <label for="fr">FR(rpm):</label>
+                <input type="text" id="fr" name="fr" required>
+                
+                <label for="saturacao">SPO2%:</label>
+                <input type="text" id="saturacao" name="saturacao" required>
+              
+                <label form="temperatura">T°C</label>
+                <input type="text" id="temperatura" name="temperatura" required>
+              
+                <label form="glicose">HGT(mmdl)</label>
+                <input type="text" id="HGT" name="HGT" required>
+                 </fieldset>
+            
+            
+            <fieldset>
+                <legend>Avaliação</legend>
+                <label for="med">Medicamentos:</label>
+                <input type="text" id="med" name="med" required>
+                
+                <label for="aler">Alergias:</label>
+                <input type="text" id="alergias" name="alergias" required>
+                
+                <fieldset>
+  <legend>Antecedentes pessoais:</legend>
+
+  <div>
+    <input type="checkbox" id="has" name="has" />
+    <label for="has">HAS</label>
+  </div>
+
+  <div>
+    <input type="checkbox" id="AVE" name="ave" />
+    <label for="ave">AVE</label>
+  </div>
+                    
+  <div>
+    <input type="checkbox" id="dm (1)" name="dm (1)" />
+    <label for="dm (1)">DM (1)</label>
+  </div>
+                    
+  <div>
+    <input type="checkbox" id="dm (2)" name="dm (2)" />
+    <label for="dm (2)">DM (2)</label>
+  </div>
+                    
+                </p>
+            </p>
+            
+  <div>
+    <input type="checkbox" id="iam" name="iam" />
+    <label for="iam">IAM</label>
+  </div>
+                    
+  <div>
+    <input type="checkbox" id="cardiopatia" name="cardiopatia" />
+    <label for="cardiopatia">Cardiopatia</label>
+  </div>
+                    
+  <div>
+    <input type="checkbox" id="convulsoes" name="convulsoes" />
+    <label for="convulsoes">Convulsoes</label>
+  </div>
+                    
+  <div>
+    <input type="checkbox" id="Cirurgico" name="cirurgico" />
+    <label for="cirurgico">Cirùrgico</label>
+  </div>
+                    
+  <div>
+    <input type="checkbox" id="asma/bronquite/DPOC" name="asma/bronquite/DPOC" />
+    <label for="asma/bronqute/DPOC">Asma/bronquite/DPOC</label>
+  </div>
+                    
+  <div>
+      <label for="outros">Outros</label>
+      <input type="text" id="outros" name="outros">
+  </div>
+</fieldset>
+                </p>   
+            
+                Escala de coma de glasgow
+            </p>
+                <fieldset>
+  <legend>Abertura ocular</legend>
+
+  <div>
+    <input type="checkbox" id="(4) Espontanea " name="(4) espontanea" />
+    <label for="(4) espontanea">(4) Espontânea</label>
+  </div>
+
+  <div>
+    <input type="checkbox" id="(3) ao chamdo" name="(3) ao chamado" />
+    <label for="(3) ao chmado">(3) Ao chamdo</label>
+  </div>
+                    
+  <div>
+    <input type="checkbox" id="(2) a dor" name="(2) a dor" />
+    <label for="(2) a dor">(2) À dor</label>
+  </div>
+                    
+  <div>
+    <input type="checkbox" id="(1) ausente" name="(1) ausente" />
+    <label for="(1) ausente">(1) Ausente</label>
+  </div>
+</fieldset>
+        
+        </p>
+                <fieldset>
+  <legend>Resposta Verbal</legend>
+
+  <div>
+    <input type="checkbox" id="(5) orinteado " name="(5) orientado" />
+    <label for="(5) orientado">(5) Orientado</label>
+  </div>
+
+  <div>
+    <input type="checkbox" id="(3) ao chamdo" name="(3) ao chamado" />
+    <label for="(3) ao chmado">(3) Ao chamdo</label>
+  </div>
+                    
+  <div>
+    <input type="checkbox" id="(2) a dor" name="(2) a dor" />
+    <label for="(2) a dor">(2) À dor</label>
+  </div>
+                    
+  <div>
+    <input type="checkbox" id="(1) ausente" name="(1) ausente" />
+    <label for="(1) ausente">(1) Ausente</label>
+  </div>
+</fieldset>
+                
+</p>
+<fieldset>
+    <legend>Resposta Motora</legend>
+
+<div>
+<input type="checkbox" name="resposta_motora" value="obedece"> Obedece (6)
+</div>
+
+<div>
+<input type="checkbox" name="resposta_motora" value="localiza"> Localiza (5)
+</div>
+
+<div>
+<input type="checkbox" name="resposta_motora" value="flete"> Flete (4)
+</div>
+
+<div>
+<input type="checkbox" name="resposta_motora" value="flexao_anormal"> Flexão Anormal (3)
+</div>
+
+<div>
+<input type="checkbox" name="resposta_motora" value="extensao"> Extensão (2)
+</div>
+
+<div>
+<input type="checkbox" name="resposta_motora" value="ausente"> Ausente (1)
+</div>
+
+    </p>
+                <label for="total">Total:</label>
+                <input type="number" id="total" name="total" required>
+
+</fieldset>
+
+</p>
+<fieldset>
+    <legend>Mecanismo do Trauma</legend>
+    
+
+<div>
+<input type="checkbox" name="mecanismo_trauma" value="FAB"> Atropelamento (FAB)
+</div>
+
+<div>
+<input type="checkbox" name="mecanismo_trauma" value="FPAF"> Agressão com Arma de Fogo (FPAF)
+</div>
+
+<div>
+<input type="checkbox" name="mecanismo_trauma" value="queimadura"> Queimadura
+</div>
+
+<div>
+<input type="checkbox" name="mecanismo_trauma" value="agressao"> Agressão
+</div>
+
+<div>
+<input type="checkbox" name="mecanismo_trauma" value="encravamento"> Encravamento
+</div>
+
+<div>
+<input type="checkbox" name="mecanismo_trauma" value="queda_altura"> Queda de Altura
+</div>
+
+<div>
+<input type="checkbox" name="mecanismo_trauma" value="nao_se_aplica"> Não se Aplica
+</div>
+
+</p> 
+    
+<div>
+<input type="checkbox" name="mecanismo_trauma" value="queda_metros"> Queda de _____ metros
+<input type="number" name="altura_queda" placeholder="Altura (m)">
+</div>
+
+    
+</fieldset>
+</p>
+
+<fieldset>
+    <legend>Pulso</legend>
+    
+    
+
+<input type="radio" name="pulso" value="regular"> Regular
+
+
+
+<input type="radio" name="pulso" value="chelo"> Chelo
+
+
+    
+<input type="radio" name="pulso" value="irregular"> Irregular
+    
+
+
+<input type="radio" name="pulso" value="fino"> Fino
+
+
+
+<input type="radio" name="pulso" value="ausente"> Ausente
+
+
+
+<input type="radio" name="pulso" value="pcr"> PCR 
+
+    
+</fieldset>
+</p>
+
+<fieldset>
+    <legend>Responsivo?</legend>
+    
+
+
+<input type="radio" name="responsivo" value="sim"> Sim
+
+
+<input type="radio" name="responsivo" value="nao"> Não
+
+    
+</fieldset>
+
+</p>
+<fieldset>
+    <legend>Vias aéreas</legend>
+    
+<div>
+<input type="checkbox" name="vias_aereas" value="livre"> Livre
+</div>
+
+<div>
+<input type="checkbox" name="vias_aereas" value="obstrucao_parcial"> Obstrução Parcial
+</div>
+
+<div>
+<input type="checkbox" name="vias_aereas" value="obstrucao_total"> Obstrução Total
+</div>
+
+<div>
+<input type="checkbox" name="vias_aereas" value="edema_de_glote"> Edema de Glote
+</div>
+
+<div>
+<input type="checkbox" name="vias_aereas" value="corpo_estranho"> Corpo Estranho
+</div>
+
+<div>
+<input type="checkbox" name="vias_aereas" value="secrecao"> Secreção
+<input type="text" name="secrecao_tipo" placeholder="Tipo de secreção">
+</div>
+    
+</fieldset>
+
+</p>
+<fieldset>
+    <legend>Achados</legend>
+    
+<div>
+<input type="checkbox" name="achados" value="halito_etilico"> Hálito Etílico
+</div>
+
+<div>
+<input type="checkbox" name="achados" value="hemoptise"> Hemoptise
+</div>
+
+<div>
+<input type="checkbox" name="achados" value="crepitacao"> Crepitação
+</div>
+
+<div>
+<input type="checkbox" name="achados" value="sangramento"> Sangramento
+</div>
+
+<div>
+<input type="checkbox" name="achados" value="efisema"> Efisema
+</div>
+
+<div>
+<input type="checkbox" name="achados" value="sc"> SC (Síndrome Cardiorrespiratória)
+</div>
+
+<div>
+<input type="checkbox" name="achados" value="outro"> Outro
+<input type="text" name="outro_achados" placeholder="Descreva">
+</div>
+</fieldset>
+
+</p>
+<fieldset>
+    <legend>Respiração</legend>
+    
+<div>
+<input type="checkbox" name="respiracao" value="espontanea"> Espontânea
+</div>
+
+<div>
+<input type="checkbox" name="respiracao" value="eupneico"> Eupnéico
+</div>
+
+<div>
+<input type="checkbox" name="respiracao" value="apneia"> Apnéia
+</div>
+
+<div>
+<input type="checkbox" name="respiracao" value="dispneia"> Dispneia
+</div>
+
+<div>
+<input type="checkbox" name="respiracao" value="iot"> IOT
+</div>
+
+<div>
+<input type="checkbox" name="respiracao" value="bradipneia"> Bradipneia
+</div>
+
+<div>
+<input type="checkbox" name="respiracao" value="taquipneia"> Taquipneia
+</div>
+
+<div>
+<input type="checkbox" name="respiracao" value="gasping"> Gasping
+</div>
+</fieldset>
+
+</p>
+
+<fieldset>
+    <legend>Ausculta pulmonar</legend>
+    
+<div>
+<input type="checkbox" name="ausculta_pulmonar" value="normal"> Normal
+</div>
+
+<div>
+<input type="checkbox" name="ausculta_pulmonar" value="roncos_sibilos"> Roncos/Sibilos
+</div>
+
+<div>
+<input type="checkbox" name="ausculta_pulmonar" value="estertores"> Estertores
+</div>
+
+    
+</p>
+    
+<div>
+<input type="checkbox" name="ausculta_pulmonar" value="mv_diminuidos_de"> MV Diminuído D/E
+</div>
+
+<div>
+<input type="checkbox" name="ausculta_pulmonar" value="mv_ausente_de"> MV Ausente D/E
+</div>
+
+<div>
+<input type="checkbox" name="ausculta_pulmonar" value="nao_realizado"> Não Realizado
+</div>
+</fieldset>
+
+</P>
+
+<fieldset>
+    <legend>Pele</legend>
+    
+<div>
+<input type="checkbox" name="pele" value="corada"> Corada
+</div>
+
+<div>
+<input type="checkbox" name="pele" value="descorada"> Descorada
+</div>
+
+<div>
+<input type="checkbox" name="pele" value="quente"> Quente
+</div>
+
+<div>
+<input type="checkbox" name="pele" value="fria"> Fria
+</div>
+
+<div>
+<input type="checkbox" name="pele" value="ictericia"> Ictérica
+</div>
+
+<div>
+<input type="checkbox" name="pele" value="cianotica"> Cianótica
+</div>
+
+<div>
+<input type="checkbox" name="pele" value="umida"> Úmida
+</div>
+
+<div>
+<input type="checkbox" name="pele" value="seca"> Seca
+</div>
+</fieldset>
+
+</p>
+<fieldset>
+    <legend>Perfusão:</legend>
+
+<input type="radio" name="perfusao" value="normal"> Normal
+
+
+
+<input type="radio" name="perfusao" value="retardada"> Retardada
+
+</fieldset>
+
+</p>
+
+
+<fieldset>
+    <legend>Exame Neurológico</legend>
+    
+<div>
+<input type="checkbox" name="exame_neurologico" value="normal"> Normal
+</div>
+
+<div>
+<input type="checkbox" name="exame_neurologico" value="agitacao"> Agitação
+</div>
+
+<div>
+<input type="checkbox" name="exame_neurologico" value="convulsao"> Convulsão
+</div>
+
+<div>
+<input type="checkbox" name="exame_neurologico" value="obnubilacao"> Obnubilação
+</div>
+
+<div>
+<input type="checkbox" name="exame_neurologico" value="sonolencia"> Sonolência
+</div>
+
+</p>
+Afasia:
+<input type="checkbox" name="afasia" value="sim"> Sim
+
+<input type="checkbox" name="afasia" value="nao"> Não
+
+</p>
+Otorragia:
+<input type="checkbox" name="otorragia" value="direita"> Direita (D)
+
+<input type="checkbox" name="otorragia" value="esquerda"> Esquerda (E)
+
+</p>
+Olhos de Guaxin:
+<input type="checkbox" name="olhos_guaxinin" value="direita"> Direita (D)
+
+<input type="checkbox" name="olhos_guaxinin" value="esquerda"> Esquerda (E)
+
+</p>
+Sinal de Battle:
+<input type="checkbox" name="sinal_battle" value="direita"> Direita (D)
+
+<input type="checkbox" name="sinal_battle" value="esquerda"> Esquerda (E)
+
+</p>
+Déficit Motor
+<div>
+<input type="checkbox" name="deficit_motor" value="msd"> MSD (Membro Superior Direito)
+</div>
+
+<div>
+<input type="checkbox" name="deficit_motor" value="mse"> MSE (Membro Superior Esquerdo)
+</div>
+
+<div>
+<input type="checkbox" name="deficit_motor" value="mid"> MID (Membro Inferior Direito)
+</div>
+
+<div>
+<input type="checkbox" name="deficit_motor" value="mie"> MIE (Membro Inferior Esquerdo)
+</div>
+
+</p>
+Pupilas
+<div>
+<input type="checkbox" name="pupilas" value="isocoric"> Isocóricas
+</div>
+
+<div>
+<input type="checkbox" name="pupilas" value="anisocoric"> Anisocóricas
+</div>
+
+</p>
+
+<div>
+<input type="checkbox" name="pupilas" value="mioticas"> Mioticas
+</div>
+
+</p>
+
+<div>
+<input type="checkbox" name="pupilas" value="midriaticas"> Midriáticas
+</div>
+
+<div>
+<input type="checkbox" name="pupilas" value="reagente"> Reagente
+</div>
+
+<div>
+<input type="checkbox" name="pupilas" value="nao_reagente"> Não Reagente
+</div>
+</fieldset>
+
+</p>
+
+
+<fieldset>
+    <legend>Gineco/Obstétrica</legend>
+    
+<div>
+<label>G: <input type="number" name="gravidez" /></label>
+<label>P: <input type="number" name="partos" /></label>
+<label>A: <input type="number" name="abortos" /></label>
+</div>
+
+<div>
+<label>Idade Gestacional (IG): <input type="number" name="idade_gestacional" /> semanas</label>
+</div>
+
+</p>
+Trabalho de Parto
+<div>
+<input type="radio" name="trabalho_parto" value="sim"> Sim
+<input type="radio" name="trabalho_parto" value="nao"> Não
+</div>
+
+</p>
+Resultado do Parto
+<div>
+<input type="radio" name="resultado_parto" value="vivo"> Vivo
+<input type="radio" name="resultado_parto" value="morto"> Morto
+</div>
+
+
+</p>
+Contrações Uterinas
+<div>
+<input type="radio" name="contracoes" value="nao"> Não
+<input type="radio" name="contracoes" value="sim"> Sim
+</div>
+
+</p>
+Contrações
+<div>
+<input type="radio" name="contracoes" value="nao"> Não
+<input type="radio" name="contracoes" value="sim"> Sim
+</div>
+
+<div>
+<label>Intensidade:
+<select name="intensidade_contracoes">
+<option value="nao se aplica">Não se aplica</option>
+<option value="ausente">Ausente</option>
+<option value="fraca">Fraca</option>
+<option value="moderada">Moderada</option>
+<option value="forte">Forte</option>
+</select>
+</label>
+
+<label>Frequência: <input type="number" name="frequencia_contracoes" /> contrações/min</label>
+</div>
+
+</p>
+<div>
+<input type="checkbox" name="hemorragia_vaginal" value="sim"> Hemorragia vaginal
+<input type="checkbox" name="abortamento" value="sim"> Abortamento
+<label>Outros: <input type="text" name="outros" /></label>
+</div>
+</fieldset>
+
+</p>
+
+<fieldset>
+    <legend>Queixas</legend>
+    
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Queixas</title>
+    <style>
+        .toolbar {
+            border: 1px solid #ccc;
+            background: #f9f9f9;
+            padding: 5px;
+        }
+        .toolbar button {
+            margin: 0 2px;
+            padding: 5px 10px;
+            border: 1px solid #ccc;
+            background: #fff;
+            cursor: pointer;
+        }
+        .editor {
+            border: 1px solid #ccc;
+            padding: 10px;
+            min-height: 200px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Queixas</h1>
+    <div class="toolbar">
+        <button onclick="formatText('bold')">Negrito</button>
+        <button onclick="formatText('italic')">Itálico</button>
+        <button onclick="formatText('underline')">Sublinhado</button>
+        <button onclick="formatText('insertUnorderedList')">Lista</button>
+        <button onclick="formatText('createLink')">Link</button>
+    </div>
+    <div id="editor" class="editor" contenteditable="true">.</div>
+
+    <script>
+        function formatText(command) {
+            if (command === 'createLink') {
+                const url = prompt('Digite o URL:');
+                document.execCommand(command, false, url);
+            } else {
+                document.execCommand(command, false, null);
+            }
+        }
+    </script>
+    
+    </fieldset>
+    
+    </p>
+
+<fieldset>
+    <legend>Observações</legend>
+    
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Observaçoes</title>
+    <style>
+        .toolbar {
+            border: 1px solid #ccc;
+            background: #f9f9f9;
+            padding: 5px;
+        }
+        .toolbar button {
+            margin: 0 2px;
+            padding: 5px 10px;
+            border: 1px solid #ccc;
+            background: #fff;
+            cursor: pointer;
+        }
+        .editor {
+            border: 1px solid #ccc;
+            padding: 10px;
+            min-height: 100px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Observações</h1>
+    <div class="toolbar">
+        <button onclick="formatText('bold')">Negrito</button>
+        <button onclick="formatText('italic')">Itálico</button>
+        <button onclick="formatText('underline')">Sublinhado</button>
+        <button onclick="formatText('insertUnorderedList')">Lista</button>
+        <button onclick="formatText('createLink')">Link</button>
+    </div>
+    <div id="editor" class="editor" contenteditable="true">.</div>
+
+    <script>
+        function formatText(command) {
+            if (command === 'createLink') {
+                const url = prompt('Digite o URL:');
+                document.execCommand(command, false, url);
+            } else {
+                document.execCommand(command, false, null);
+            }
+        }
+    </script>
+    
+    </fieldset>
+    
+    </p>
+
+<fieldset>
+    <legend>Relatório</legend>
+    
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório</title>
+    <style>
+        .toolbar {
+            border: 1px solid #ccc;
+            background: #f9f9f9;
+            padding: 5px;
+        }
+        .toolbar button {
+            margin: 0 2px;
+            padding: 5px 10px;
+            border: 1px solid #ccc;
+            background: #fff;
+            cursor: pointer;
+        }
+        .editor {
+            border: 1px solid #ccc;
+            padding: 10px;
+            min-height: 200px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Relatório</h1>
+    <div class="toolbar">
+        <button onclick="formatText('bold')">Negrito</button>
+        <button onclick="formatText('italic')">Itálico</button>
+        <button onclick="formatText('underline')">Sublinhado</button>
+        <button onclick="formatText('insertUnorderedList')">Lista</button>
+        <button onclick="formatText('createLink')">Link</button>
+    </div>
+    <div id="editor" class="editor" contenteditable="true">.</div>
+
+    <script>
+        function formatText(command) {
+            if (command === 'createLink') {
+                const url = prompt('Digite o URL:');
+                document.execCommand(command, false, url);
+            } else {
+                document.execCommand(command, false, null);
+            }
+        }
+    </script>
+    
+    </fieldset>
+
+            </fieldset>
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Assinatura</title>
+</head>
+<body>
+
+    <form action="#" method="POST">
+        <div>
+            <label for="nome">Nome do Profissional:</label>
+            <select id="nome" name="nome">
+                <option value="profissional1">João Gabriel da Silva</option>
+                <option value="profissional2">Monica Lopes de Lima</option>
+                <option value="profissional3">Erivania Freire Cardoso</option>
+                <!-- Adicione mais nomes conforme necessário -->
+            </select>
+        </div>
+
+        <div>
+            <label for="profissao">Profissão1:</label>
+            <select id="profissao" name="profissao">
+                <option value="bombeiro_civil">Bombeiro Civil</option>
+                <option value="socorrista">Socorrista</option>
+            </select>
+        </div>
+        
+        <div>
+            <label for="profissao">Profissão2:</label>
+            <select id="profissao" name="profissao">
+                <option value="bombeiro_civil">Bombeiro Civil</option>
+                <option value="socorrista">Socorrista</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="registro">Registro1:</label>
+            <input type="text" id="registro" name="registro" placeholder="Digite o número de registro">
+        </div>
+
+        <div>
+            <label for="registro">Registro2:</label>
+            <input type="text" id="registro" name="registro" placeholder="Digite o número de registro">
+        </div>
+       
+    </form>
+
+</body>
+</html>
+
+                <button type="submit">Salvar Ocorrência</button>
+        </form>
+    </div>
+</body>
+</html>
+
+            
+            
+            <!-- Botão de download do PDF -->
+            <button type="button" onclick="gerarPDF()">Baixar PDF</button>
+        </form>
+    </div>
+
+    <!-- Script para gerar o PDF com formatação -->
+    <script>
+        function gerarPDF() {
+            const element = document.getElementById('formulario');
+            const options = {
+                margin:       1,
+                filename:     'Registro_de_Ocorrencia.pdf',
+                image:        { type: 'jpeg', quality: 0.98 },
+                html2canvas:  { scale: 4 },
+                jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+
+            // Usando html2pdf para gerar o PDF com o conteúdo e a formatação da página
+            html2pdf().from(element).set(options).save();
+        }
+    </script>
+</body>
+</html>
