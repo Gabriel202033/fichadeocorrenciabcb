@@ -11,29 +11,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Topo do Site - Bombeiro Civil 2025</title>
   <style>
-    .image-container {
-      text-align: center; /* Centraliza a imagem no centro da página */
-      margin: 20px; /* Ajuste o espaço em torno da imagem */
+    body {
+      margin: 0; /* Remove margens padrão */
+      padding: 0; /* Remove espaçamentos padrão */
+      background-image: url('bombeiro.webp'); /* Caminho para a imagem */
+      background-size: cover; /* Faz com que a imagem cubra todo o fundo */
+      background-position: center; /* Centraliza a imagem no fundo */
+      background-repeat: no-repeat; /* Evita repetição da imagem */
+      height: 100vh; /* Faz com que o fundo ocupe a altura total da tela */
     }
-
-    .responsive-image {
-      max-width: 100%; /* Garante que a imagem seja responsiva */
-      height: auto; /* Mantém as proporções da imagem */
-      border: 2px solid #000; /* Borda opcional */
+    .content {
+      position: relative; /* Garante que o conteúdo seja posicionado acima do fundo */
+      z-index: 1; /* Mantém o conteúdo acima da imagem */
+      text-align: center; /* Centraliza o conteúdo */
+      color: white; /* Cor do texto para contraste */
+      font-family: Arial, sans-serif;
     }
   </style>
 </head>
 <body>
-  <div class="image-container">
-    <img 
-      src="bombeiro.webp" 
-      alt="bombeiro.webp" 
-      class="responsive-image"
-      style="width: 80%; max-width: 600px;" 
-    >
+  <div class="content">
+    <h1>Bombeiro Civil 2025</h1>
+    <p>Bem-vindo ao site de registro de ocorrência.</p>
   </div>
 </body>
 </html>
+
 
     
     <title>Regístro de ocorrência</title>
