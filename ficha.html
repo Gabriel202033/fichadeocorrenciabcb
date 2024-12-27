@@ -772,54 +772,7 @@ Contrações
 
 <fieldset>
     <legend>Queixas</legend>
-    
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Queixas</title>
-    <style>
-        .toolbar {
-            border: 1px solid #ccc;
-            background: #f9f9f9;
-            padding: 5px;
-        }
-        .toolbar button {
-            margin: 0 2px;
-            padding: 5px 10px;
-            border: 1px solid #ccc;
-            background: #fff;
-            cursor: pointer;
-        }
-        .editor {
-            border: 1px solid #ccc;
-            padding: 10px;
-            min-height: 200px;
-            overflow-y: auto;
-        }
-    </style>
-</head>
-<body>
-    <h1>Queixas</h1>
-    <div class="toolbar">
-        <button onclick="formatText('bold')">Negrito</button>
-        <button onclick="formatText('italic')">Itálico</button>
-        <button onclick="formatText('underline')">Sublinhado</button>
-        <button onclick="formatText('insertUnorderedList')">Lista</button>
-        <button onclick="formatText('createLink')">Link</button>
-    </div>
-    <div id="editor" class="editor" contenteditable="true">.</div>
-
-    <script>
-        function formatText(command) {
-            if (command === 'createLink') {
-                const url = prompt('Digite o URL:');
-                document.execCommand(command, false, url);
-            } else {
-                document.execCommand(command, false, null);
-            }
-        }
-    </script>
+    <textarea rows="5" cols="30"></textarea>
     
     </fieldset>
     
@@ -827,110 +780,16 @@ Contrações
 
 <fieldset>
     <legend>Observações</legend>
-    
+<textarea rows="5" cols="30"></textarea>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Observaçoes</title>
-    <style>
-        .toolbar {
-            border: 1px solid #ccc;
-            background: #f9f9f9;
-            padding: 5px;
-        }
-        .toolbar button {
-            margin: 0 2px;
-            padding: 5px 10px;
-            border: 1px solid #ccc;
-            background: #fff;
-            cursor: pointer;
-        }
-        .editor {
-            border: 1px solid #ccc;
-            padding: 10px;
-            min-height: 100px;
-            overflow-y: auto;
-        }
-    </style>
-</head>
-<body>
-    <h1>Observações</h1>
-    <div class="toolbar">
-        <button onclick="formatText('bold')">Negrito</button>
-        <button onclick="formatText('italic')">Itálico</button>
-        <button onclick="formatText('underline')">Sublinhado</button>
-        <button onclick="formatText('insertUnorderedList')">Lista</button>
-        <button onclick="formatText('createLink')">Link</button>
-    </div>
-    <div id="editor" class="editor" contenteditable="true">.</div>
-
-    <script>
-        function formatText(command) {
-            if (command === 'createLink') {
-                const url = prompt('Digite o URL:');
-                document.execCommand(command, false, url);
-            } else {
-                document.execCommand(command, false, null);
-            }
-        }
-    </script>
-    
     </fieldset>
     
     </p>
 
 <fieldset>
     <legend>Relatório</legend>
-    
+<textarea rows="5" cols="30"></textarea>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Relatório</title>
-    <style>
-        .toolbar {
-            border: 1px solid #ccc;
-            background: #f9f9f9;
-            padding: 5px;
-        }
-        .toolbar button {
-            margin: 0 2px;
-            padding: 5px 10px;
-            border: 1px solid #ccc;
-            background: #fff;
-            cursor: pointer;
-        }
-        .editor {
-            border: 1px solid #ccc;
-            padding: 10px;
-            min-height: 200px;
-            overflow-y: auto;
-        }
-    </style>
-</head>
-<body>
-    <h1>Relatório</h1>
-    <div class="toolbar">
-        <button onclick="formatText('bold')">Negrito</button>
-        <button onclick="formatText('italic')">Itálico</button>
-        <button onclick="formatText('underline')">Sublinhado</button>
-        <button onclick="formatText('insertUnorderedList')">Lista</button>
-        <button onclick="formatText('createLink')">Link</button>
-    </div>
-    <div id="editor" class="editor" contenteditable="true">.</div>
-
-    <script>
-        function formatText(command) {
-            if (command === 'createLink') {
-                const url = prompt('Digite o URL:');
-                document.execCommand(command, false, url);
-            } else {
-                document.execCommand(command, false, null);
-            }
-        }
-    </script>
-    
     </fieldset>
 
             </fieldset>
