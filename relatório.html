@@ -74,6 +74,14 @@
         .btn:hover {
             background-color: #0056b3;
         }
+        @media print {
+            textarea, input {
+                display: none;
+            }
+            .print-content {
+                display: block;
+            }
+        }
     </style>
 </head>
 <body>
@@ -87,27 +95,33 @@
             <div class="form-group">
                 <label for="horario">Plantão admitido às:</label>
                 <input type="time" id="horario" name="horario">
+                <p class="print-content" id="print-horario"></p>
             </div>
             <div class="form-group">
                 <label for="data">Data:</label>
                 <input type="date" id="data" name="data">
+                <p class="print-content" id="print-data"></p>
             </div>
             <div class="form-group">
                 <label for="municipio">Município:</label>
                 <input type="text" id="municipio" name="municipio" placeholder="Digite o município">
+                <p class="print-content" id="print-municipio"></p>
             </div>
             <div class="form-group">
                 <label for="estado">Estado:</label>
                 <input type="text" id="estado" name="estado" placeholder="Digite o estado">
+                <p class="print-content" id="print-estado"></p>
             </div>
             <div class="form-group">
                 <label for="relato">Relato:</label>
                 <textarea id="relato" name="relato" rows="10" placeholder="Descreva os eventos do plantão"></textarea>
+                <p class="print-content" id="print-relato"></p>
             </div>
             <p>Confirmo e confio nas informações assim descritas e dou fé.</p>
             <div class="form-group">
                 <label for="dataAssinatura">Data da assinatura:</label>
                 <input type="date" id="dataAssinatura" name="dataAssinatura">
+                <p class="print-content" id="print-dataAssinatura"></p>
             </div>
             <div class="signatures">
                 <div>
@@ -129,6 +143,15 @@
 
     <script>
         document.getElementById('printPdf').addEventListener('click', function() {
+            // Substituir os campos de entrada pelos valores digitados
+            document.getElementById('print-horario').innerText = document.getElementById('horario').value;
+            document.getElementById('print-data').innerText = document.getElementById('data').value;
+            document.getElementById('print-municipio').innerText = document.getElementById('municipio').value;
+            document.getElementById('print-estado').innerText = document.getElementById('estado').value;
+            document.getElementById('print-relato').innerText = document.getElementById('relato').value;
+            document.getElementById('print-dataAssinatura').innerText = document.getElementById('dataAssinatura').value;
+
+            // Abrir a interface de impressão
             window.print();
         });
     </script>
