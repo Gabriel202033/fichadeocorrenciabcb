@@ -80,7 +80,7 @@
     <div class="container">
         <div class="header">
             <img src="Logo_bombeiro_BCB.png" alt="Logo 1">
-            <img src="Logo_socorrista_BCB.png" alt="Logo 2">
+            <img src="Logo_socorrista_BCP.png" alt="Logo 2">
         </div>
         <h1>Relatório de Plantão</h1>
         <form>
@@ -125,6 +125,29 @@
             </div>
             <button type="submit" class="btn">Salvar</button>
         </form>
+
+<!-- Botão de download do PDF -->
+            <button type="button" onclick="gerarPDF()">Baixar PDF</button>
+        </form>
+    </div>
+
+    <!-- Script para gerar o PDF com formatação -->
+    <script>
+        function gerarPDF() {
+            const element = document.getElementById('formulario');
+            const options = {
+                margin:       1,
+                filename:     'Registro_de_Ocorrencia.pdf',
+                image:        { type: 'jpeg', quality: 0.98 },
+                html2canvas:  { scale: 4 },
+                jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+
+            // Usando html2pdf para gerar o PDF com o conteúdo e a formatação da página
+            html2pdf().from(element).set(options).save();
+        }
+    </script>
+        
     </div>
 </body>
 </html>
