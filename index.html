@@ -121,7 +121,6 @@
             password: 21012006   // Senha exclusiva
         };
 
-        <script>
         // Lista de usuários válidos para Relatório de Plantão
         const validUsersrelatório = {
             15191585488: 21012006,
@@ -153,7 +152,7 @@
             } else {
                 alert("Selecione uma ficha válida!");
             }
-            if (selectedFicha === "ficha") {
+            if (selectedFicha === "relatório") {
                 // Verifica usuários válidos para Relatório de Plantão
                 if (validUsersFicha[username] === password) {
                     window.location.href = "relatório.html"; // Redireciona para Relatório de Plantão
