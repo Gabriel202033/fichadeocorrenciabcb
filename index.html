@@ -37,7 +37,6 @@
 </body>
 </html>
 
-
     
     <title>Regístro de ocorrência</title>
     <style>
@@ -97,8 +96,9 @@
         <form id="loginForm">
             <select id="fichaSelect" required>
                 <option value="" disabled selected>Selecione um sistema</option>
-                <option value="ficha">Regístro de Ocorrēcia</option>
+                <option value="ficha">Regístro de Ocorrência</option>
                 <option value="orientação">Ficha de Orientações</option>
+                <option value="relatorio">Relatório de Plantão</option>
             </select>
             <input type="number" id="username" placeholder="Usuário (apenas números)" required>
             <input type="password" id="password" inputmode="numeric" placeholder="Senha (apenas números)" required>
@@ -118,6 +118,12 @@
         const validIndividualUser = {
             username: 15191585488,  // Login exclusivo
             password: 21012006   // Senha exclusiva
+        };
+
+        // Credenciais específicas para o Relatório de Plantão
+        const validRelatorioUsers = {
+            15191585488: 21012006, // Exemplo de login e senha
+            55555: 6666
         };
 
         document.getElementById('loginForm').addEventListener('submit', function(event) {
@@ -141,10 +147,16 @@
                 } else {
                     alert("Não autorizado!");
                 }
+            } else if (selectedFicha === "relatorio") {
+                // Verifica login para o Relatório de Plantão
+                if (validRelatorioUsers[username] === password) {
+                    window.location.href = "relatório.html"; // Redireciona para o Relatório de Plantão
+                } else {
+                    alert("Usuário ou senha inválidos para o Relatório de Plantão!");
+                }
             } else {
                 alert("Selecione uma ficha válida!");
             }
-            
         });
     </script>
 </body>
