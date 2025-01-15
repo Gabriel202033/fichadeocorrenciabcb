@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório de Plantão</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            border: 1px solid #000;
+            padding: 20px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .header img {
+            height: 100px;
+        }
+        h1 {
+            text-align: center;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 10px;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 5px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .signatures {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .signatures div {
+            text-align: center;
+            width: 30%;
+        }
+        .signatures img {
+            width: 100%;
+            max-width: 200px;
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            background-color: #007BFF;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            border: none;
+            border-radius: 4px;
+            margin-top: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="logo1.png" alt="Logo 1">
+            <img src="logo2.png" alt="Logo 2">
+        </div>
+        <h1>Relatório de Plantão</h1>
+        <form>
+            <div class="form-group">
+                <label for="horario">Plantão admitido às:</label>
+                <input type="time" id="horario" name="horario">
+            </div>
+            <div class="form-group">
+                <label for="data">Data:</label>
+                <input type="date" id="data" name="data">
+            </div>
+            <div class="form-group">
+                <label for="municipio">Município:</label>
+                <input type="text" id="municipio" name="municipio" placeholder="Digite o município">
+            </div>
+            <div class="form-group">
+                <label for="estado">Estado:</label>
+                <input type="text" id="estado" name="estado" placeholder="Digite o estado">
+            </div>
+            <div class="form-group">
+                <label for="relato">Relato:</label>
+                <textarea id="relato" name="relato" rows="10" placeholder="Descreva os eventos do plantão"></textarea>
+            </div>
+            <p>Confirmo e confio nas informações assim descritas e dou fé.</p>
+            <div class="form-group">
+                <label for="dataAssinatura">Data da assinatura:</label>
+                <input type="date" id="dataAssinatura" name="dataAssinatura">
+            </div>
+            <div class="signatures">
+                <div>
+                    <img src="assinatura01.jpg" alt="Assinatura 1">
+                    <p>Assinatura 1</p>
+                </div>
+                <div>
+                    <p>_____________________</p>
+                    <p>Assinatura 2</p>
+                </div>
+                <div>
+                    <img src="assinatura03.jpg" alt="Assinatura 3">
+                    <p>Assinatura 3</p>
+                </div>
+            </div>
+            <button type="submit" class="btn">Salvar</button>
+        </form>
+    </div>
+</body>
+</html>
