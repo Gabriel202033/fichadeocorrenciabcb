@@ -83,7 +83,7 @@
             <img src="Logo_socorrista_BCP.png" alt="Logo 2">
         </div>
         <h1>Relatório de Plantão</h1>
-        <form>
+        <form id="form">
             <div class="form-group">
                 <label for="horario">Plantão admitido às:</label>
                 <input type="time" id="horario" name="horario">
@@ -123,31 +123,35 @@
                     <p>Assinatura 3</p>
                 </div>
             </div>
-            <button type="submit" class="btn">Salvar</button>
-        </form>
-
-<!-- Botão de download do PDF -->
-            <button type="button" onclick="gerarPDF()">Baixar PDF</button>
-        </form>
+            <button type="button" class="btn" id="downloadPdf">Baixar PDF</button>
+        </form>      
     </div>
 
-    <!-- Script para gerar o PDF com formatação -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script>
-        function gerarPDF() {
-            const element = document.getElementById('formulario');
-            const options = {
-                margin:       1,
-                filename:     'Registro_de_Ocorrencia.pdf',
-                image:        { type: 'jpeg', quality: 0.98 },
-                html2canvas:  { scale: 4 },
-                jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
-            };
+        document.getElementById('downloadPdf').addEventListener('click', function() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            
+            const horario = document.getElementById('horario').value;
+            const data = document.getElementById('data').value;
+            const municipio = document.getElementById('municipio').value;
+            const estado = document.getElementById('estado').value;
+            const relato = document.getElementById('relato').value;
+            const dataAssinatura = document.getElementById('dataAssinatura').value;
 
-            // Usando html2pdf para gerar o PDF com o conteúdo e a formatação da página
-            html2pdf().from(element).set(options).save();
-        }
+            doc.text('Relatório de Plantão', 10, 10);
+            doc.text(`Plantão admitido às: ${horario}`, 10, 20);
+            doc.text(`Data: ${data}`, 10, 30);
+            doc.text(`Município: ${municipio}`, 10, 40);
+            doc.text(`Estado: ${estado}`, 10, 50);
+            doc.text('Relato:', 10, 60);
+            doc.text(relato, 10, 70);
+            doc.text('Confirmo e confio nas informações assim descritas e dou fé.', 10, 100);
+            doc.text(`Data da assinatura: ${dataAssinatura}`, 10, 110);
+
+            doc.save('relatorio_plantao.pdf');
+        });
     </script>
-        
-    </div>
 </body>
 </html>
