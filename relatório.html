@@ -123,24 +123,13 @@
                     <p>Assinatura 3</p>
                 </div>
             </div>
-            <button type="button" class="btn" id="downloadPdf">Baixar PDF</button>
+            <button type="button" class="btn" id="printPdf">Baixar PDF</button>
         </form>      
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <script>
-        document.getElementById('downloadPdf').addEventListener('click', function() {
-            const content = document.getElementById('content');
-
-            const options = {
-                margin: 10,
-                filename: 'relatorio_plantao.pdf',
-                image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: { scale: 2 },
-                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
-            };
-
-            html2pdf().set(options).from(content).save();
+        document.getElementById('printPdf').addEventListener('click', function() {
+            window.print();
         });
     </script>
 </body>
