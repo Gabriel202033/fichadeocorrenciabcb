@@ -99,7 +99,6 @@
                 <option value="" disabled selected>Selecione um sistema</option>
                 <option value="ficha">Regístro de Ocorrēcia</option>
                 <option value="orientação">Ficha de Orientações</option>
-                <option value="relatório">Relatório de Plantão</option>
             </select>
             <input type="number" id="username" placeholder="Usuário (apenas números)" required>
             <input type="password" id="password" inputmode="numeric" placeholder="Senha (apenas números)" required>
@@ -119,13 +118,6 @@
         const validIndividualUser = {
             username: 15191585488,  // Login exclusivo
             password: 21012006   // Senha exclusiva
-        };
-
-        // Lista de usuários válidos para Relatório de Plantão
-        const validUsersrelatório = {
-            15191585488: 21012006,
-            54321: 9876,
-            11111: 2222
         };
 
         document.getElementById('loginForm').addEventListener('submit', function(event) {
@@ -152,13 +144,7 @@
             } else {
                 alert("Selecione uma ficha válida!");
             }
-            if (selectedFicha === "relatório") {
-                // Verifica usuários válidos para Relatório de Plantão
-                if (validUsersFicha[username] === password) {
-                    window.location.href = "relatório.html"; // Redireciona para Relatório de Plantão
-                } else {
-                    alert("Usuário ou senha inválidos para Relatório!");
-                }
+            
         });
     </script>
 </body>
