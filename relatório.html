@@ -77,13 +77,13 @@
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="container" id="content">
         <div class="header">
             <img src="Logo_bombeiro_BCB.png" alt="Logo 1">
             <img src="Logo_socorrista_BCP.png" alt="Logo 2">
         </div>
         <h1>Relatório de Plantão</h1>
-        <form id="form">
+        <form>
             <div class="form-group">
                 <label for="horario">Plantão admitido às:</label>
                 <input type="time" id="horario" name="horario">
@@ -127,30 +127,20 @@
         </form>      
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <script>
         document.getElementById('downloadPdf').addEventListener('click', function() {
-            const { jsPDF } = window.jspdf;
-            const doc = new jsPDF();
-            
-            const horario = document.getElementById('horario').value;
-            const data = document.getElementById('data').value;
-            const municipio = document.getElementById('municipio').value;
-            const estado = document.getElementById('estado').value;
-            const relato = document.getElementById('relato').value;
-            const dataAssinatura = document.getElementById('dataAssinatura').value;
+            const content = document.getElementById('content');
 
-            doc.text('Relatório de Plantão', 10, 10);
-            doc.text(`Plantão admitido às: ${horario}`, 10, 20);
-            doc.text(`Data: ${data}`, 10, 30);
-            doc.text(`Município: ${municipio}`, 10, 40);
-            doc.text(`Estado: ${estado}`, 10, 50);
-            doc.text('Relato:', 10, 60);
-            doc.text(relato, 10, 70);
-            doc.text('Confirmo e confio nas informações assim descritas e dou fé.', 10, 100);
-            doc.text(`Data da assinatura: ${dataAssinatura}`, 10, 110);
+            const options = {
+                margin: 10,
+                filename: 'relatorio_plantao.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
 
-            doc.save('relatorio_plantao.pdf');
+            html2pdf().set(options).from(content).save();
         });
     </script>
 </body>
