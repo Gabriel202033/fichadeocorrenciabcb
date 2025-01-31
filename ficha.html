@@ -841,7 +841,28 @@ Contrações
         </div>
        
     </form>
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyCxUab7il31-zQPYPLIAtTCmH5TL8swwNM",
+  authDomain: "site-de-ocorrencia.firebaseapp.com",
+  projectId: "site-de-ocorrencia",
+  storageBucket: "site-de-ocorrencia.firebasestorage.app",
+  messagingSenderId: "554426722299",
+  appId: "1:554426722299:web:93ef3c90d5dec681af0d5e",
+  measurementId: "G-B5L80YVYBM"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+    
 </body>
 </html>
 
