@@ -841,6 +841,7 @@ Contrações
         </div>
        
     </form>
+    
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
@@ -883,7 +884,7 @@ const analytics = getAnalytics(app);
   const db = getFirestore(app);
 
   // Capturar o envio do formulário
-  document.getElementById("form-ocorrencia").addEventListener("submit", async function(event) {
+  document.getElementById("ocorrencia-form").addEventListener("submit", async function(event) {
     event.preventDefault(); // Evita o recarregamento da página
 
     // Capturar os dados do formulário
