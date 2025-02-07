@@ -839,77 +839,7 @@ Contrações
             <label for="Regístro2">Registro2:</label>
             <input type="text" id="Regístro2" name="Regístro2" placeholder="Digite o número de registro">
         </div>
-       
     </form>
-<script>
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyCxUab7il31-zQPYPLIAtTCmH5TL8swwNM",
-  authDomain: "site-de-ocorrencia.firebaseapp.com",
-  projectId: "site-de-ocorrencia",
-  storageBucket: "site-de-ocorrencia.firebasestorage.app",
-  messagingSenderId: "554426722299",
-  appId: "1:554426722299:web:93ef3c90d5dec681af0d5e",
-  measurementId: "G-B5L80YVYBM"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-    
-<!-- Firebase SDK -->
-<script type="module">
-  // Configuração do Firebase (substitua pelos seus dados)
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-  import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
-
-  const firebaseConfig = {
-    apiKey: "AIzaSyCxUab7il31-zQPYPLIAtTCmH5TL8swwNM",
-    authDomain: "site-de-ocorrencia.firebaseapp.com",
-    projectId: "site-de-ocorrencia",
-    storageBucket: "site-de-ocorrencia.firebasestorage.app",
-    messagingSenderId: "554426722299",
-    appId: "G-B5L80YVYBM"
-  };
-
-  // Inicializar Firebase
-  const app = initializeApp(firebaseConfig);
-  const db = getFirestore(app);
-
-  // Capturar o envio do formulário
-  document.getElementById("ocorrencia-form").addEventListener("submit", async function(event) {
-    event.preventDefault(); // Evita o recarregamento da página
-
-    // Capturar os dados do formulário
-    const nome = document.getElementById("nome").value;
-    const idade = document.getElementById("idade").value;
-    const descricao = document.getElementById("descricao").value;
-
-    try {
-      // Adicionar ao Firestore
-      await addDoc(collection(db, "pacientes"), {
-        nome: nome,
-        idade: idade,
-        descricao: descricao,
-        dataRegistro: new Date()
-      });
-      alert("Dados salvos com sucesso!");
-      this.reset(); // Limpar o formulário após o envio
-    } catch (error) {
-      console.error("Erro ao salvar: ", error);
-      alert("Erro ao salvar os dados.");
-    }
-  });
-</script>
-
-<button type="button" id="salvar">Salvar no Firebase</button>
 
     
 </body>
