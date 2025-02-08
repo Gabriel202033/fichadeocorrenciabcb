@@ -23,7 +23,7 @@
 <body>
     <div class="container" id="formulario">
         <h1>Registro de Ocorrência BCP</h1>
-        <form id="ocorrencia-form" action="https://formsubmit.co/gabrielaph2000@gmail.com" method="POST" enctype="multipart/form-data">
+        <form id="ocorrencia-form" enctype="multipart/form-data">
     <input type="file" id="arquivo" name="arquivo">
     <button type="submit">Salvar</button>
 </form>
@@ -32,9 +32,9 @@
 
 <script>
     document.getElementById("ocorrencia-form").addEventListener("submit", async function(event) {
-        event.preventDefault();
+        event.preventDefault(); // Impede que o formulário seja enviado imediatamente
 
-        let formData = new FormData(this);
+        let formData = new FormData();
         let arquivo = document.getElementById("arquivo").files[0];
 
         if (!arquivo) {
@@ -44,7 +44,6 @@
 
         formData.append("arquivo", arquivo);
 
-        // Enviar o arquivo para o United Project
         try {
             let resposta = await fetch("https://script.google.com/macros/s/AKfycbzj9qOdOrR-I7S207BeEn_oSiD0mxDJLNodxf6olkdGOpOK8yGzRndrkcZD3ZQpaPF2kA/exec", {
                 method: "POST",
@@ -52,13 +51,34 @@
             });
 
             let resultado = await resposta.json();
-            document.getElementById("mensagem").innerText = resultado.mensagem || "Arquivo enviado com sucesso!";
+
+            if (resultado.mensagem) {
+                document.getElementById("mensagem").innerText = resultado.mensagem;
+            } else {
+                document.getElementById("mensagem").innerText = "Arquivo enviado com sucesso!";
+            }
+
+            // Agora, envia os dados do formulário para o FormSubmit
+            let form = document.createElement("form");
+            form.action = "https://formsubmit.co/gabrielaph2000@gmail.com";
+            form.method = "POST";
+
+            // Adiciona todos os campos do formulário original
+            let inputs = document.querySelectorAll("#ocorrencia-form input:not([type='file'])");
+            inputs.forEach(input => {
+                let hiddenField = document.createElement("input");
+                hiddenField.type = "hidden";
+                hiddenField.name = input.name;
+                hiddenField.value = input.value;
+                form.appendChild(hiddenField);
+            });
+
+            document.body.appendChild(form);
+            form.submit(); // Envia o formulário
+
         } catch (erro) {
             document.getElementById("mensagem").innerText = "Erro ao enviar o arquivo.";
         }
-
-        // Agora envia o formulário normalmente para o FormSubmit
-        this.submit();
     });
 </script>
             
