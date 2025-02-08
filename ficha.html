@@ -24,62 +24,40 @@
     <div class="container" id="formulario">
         <h1>Registro de Ocorrência BCP</h1>
         <form id="ocorrencia-form" enctype="multipart/form-data">
-    <input type="file" id="arquivo" name="arquivo">
-    <button type="submit">Salvar</button>
+    <inp<form id="ocorrencia-form" enctype="multipart/form-data">
+  <input type="file" id="arquivo" name="file" accept="application/pdf">
+  <button type="submit">Enviar PDF</button>
 </form>
-
 <p id="mensagem"></p>
 
 <script>
-    document.getElementById("ocorrencia-form").addEventListener("submit", async function(event) {
-        event.preventDefault(); // Impede que o formulário seja enviado imediatamente
+  document.getElementById("ocorrencia-form").addEventListener("submit", async function(event) {
+      event.preventDefault(); // Impede o envio imediato do formulário
 
-        let formData = new FormData();
-        let arquivo = document.getElementById("arquivo").files[0];
+      let formData = new FormData();
+      let arquivo = document.getElementById("arquivo").files[0];
 
-        if (!arquivo) {
-            alert("Por favor, selecione um arquivo!");
-            return;
-        }
+      if (!arquivo) {
+          alert("Por favor, selecione um arquivo PDF.");
+          return;
+      }
 
-        formData.append("arquivo", arquivo);
+      formData.append("file", arquivo);
 
-        try {
-            let resposta = await fetch("https://script.google.com/macros/s/AKfycbzj9qOdOrR-I7S207BeEn_oSiD0mxDJLNodxf6olkdGOpOK8yGzRndrkcZD3ZQpaPF2kA/exec", {
-                method: "POST",
-                body: formData
-            });
+      try {
+          let resposta = await fetch("https://script.google.com/macros/s/AKfycbzj9qOdOrR-I7S207BeEn_oSiD0mxDJLNodxf6olkdGOpOK8yGzRndrkcZD3ZQpaPF2kA/exec", {
+              method: "POST",
+              body: formData
+          });
 
-            let resultado = await resposta.json();
+          let resultado = await resposta.text();
 
-            if (resultado.mensagem) {
-                document.getElementById("mensagem").innerText = resultado.mensagem;
-            } else {
-                document.getElementById("mensagem").innerText = "Arquivo enviado com sucesso!";
-            }
+          document.getElementById("mensagem").innerText = resultado;
 
-            // Agora, envia os dados do formulário para o FormSubmit
-            let form = document.createElement("form");
-            form.action = "https://formsubmit.co/gabrielaph2000@gmail.com";
-            form.method = "POST";
-
-            // Adiciona todos os campos do formulário original
-            let inputs = document.querySelectorAll("#ocorrencia-form input:not([type='file'])");
-            inputs.forEach(input => {
-                let hiddenField = document.createElement("input");
-                hiddenField.type = "hidden";
-                hiddenField.name = input.name;
-                hiddenField.value = input.value;
-                form.appendChild(hiddenField);
-            });
-
-            document.body.appendChild(form);
-            form.submit(); // Envia o formulário
-
-        } catch (erro) {
-            document.getElementById("mensagem").innerText = "Erro ao enviar o arquivo.";
-        }
-    });
+      } catch (erro) {
+          document.getElementById("mensagem").innerText = "Erro ao enviar o arquivo.";
+      }
+  });
 </script>
             
             
