@@ -23,41 +23,8 @@
 <body>
     <div class="container" id="formulario">
         <h1>Registro de Ocorrência BCP</h1>
-        <form id="ocorrencia-form" enctype="multipart/form-data">
-  <input type="file" id="arquivo" name="file" accept="application/pdf">
-  <button type="submit">Enviar PDF</button>
-</form>
-<p id="mensagem"></p>
-
-<script>
-  document.getElementById("ocorrencia-form").addEventListener("submit", async function(event) {
-      event.preventDefault(); // Impede o envio imediato do formulário
-
-      let formData = new FormData();
-      let arquivo = document.getElementById("arquivo").files[0];
-
-      if (!arquivo) {
-          alert("Por favor, selecione um arquivo PDF.");
-          return;
-      }
-
-      formData.append("file", arquivo);
-
-      try {
-          let resposta = await fetch("https://script.google.com/macros/s/AKfycbxV-sKWBatc4k7Z9WXEnNSsbVaQ_0aUYTKdNXOO6lR6XKYDqXBI6E6NW0BLmKE9__sH/exec", {
-              method: "POST",
-              body: formData
-          });
-
-          let resultado = await resposta.text();
-
-          document.getElementById("mensagem").innerText = resultado;
-
-      } catch (erro) {
-          document.getElementById("mensagem").innerText = "Erro ao enviar o arquivo.";
-      }
-  });
-</script>
+        <form action="https://formsubmit.co/gabrielaph2000@gmail.com" method="POST">
+        <form id="ocorrencia-form">
             
             
             <!DOCTYPE html>
