@@ -23,8 +23,44 @@
 <body>
     <div class="container" id="formulario">
         <h1>Registro de Ocorrência BCP</h1>
-        <form action="https://formsubmit.co/gabrielaph2000@gmail.com" method="POST">
-        <form id="ocorrencia-form">
+        <form id="ocorrencia-form" action="https://formsubmit.co/gabrielaph2000@gmail.com" method="POST" enctype="multipart/form-data">
+    <input type="file" id="arquivo" name="arquivo">
+    <button type="submit">Salvar</button>
+</form>
+
+<p id="mensagem"></p>
+
+<script>
+    document.getElementById("ocorrencia-form").addEventListener("submit", async function(event) {
+        event.preventDefault();
+
+        let formData = new FormData(this);
+        let arquivo = document.getElementById("arquivo").files[0];
+
+        if (!arquivo) {
+            alert("Por favor, selecione um arquivo!");
+            return;
+        }
+
+        formData.append("arquivo", arquivo);
+
+        // Enviar o arquivo para o United Project
+        try {
+            let resposta = await fetch("https://script.google.com/macros/s/AKfycbzj9qOdOrR-I7S207BeEn_oSiD0mxDJLNodxf6olkdGOpOK8yGzRndrkcZD3ZQpaPF2kA/exec", {
+                method: "POST",
+                body: formData
+            });
+
+            let resultado = await resposta.json();
+            document.getElementById("mensagem").innerText = resultado.mensagem || "Arquivo enviado com sucesso!";
+        } catch (erro) {
+            document.getElementById("mensagem").innerText = "Erro ao enviar o arquivo.";
+        }
+
+        // Agora envia o formulário normalmente para o FormSubmit
+        this.submit();
+    });
+</script>
             
             
             <!DOCTYPE html>
