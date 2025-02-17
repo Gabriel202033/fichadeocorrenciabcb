@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficha de Remoção Bombeiro Civil</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 210mm;
+            margin: auto;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+        }
+        .campo {
+            width: 48%;
+            margin-bottom: 10px;
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+        }
+        button {
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        .icon {
+            margin-right: 5px;
+        }
+        @media print {
+            body {
+                width: 100%;
+            }
+            .container {
+                border-bottom: 1px solid black;
+            }
+        }
+    </style>
+    <script>
+        let numeroOcorrencia = 1;
+        
+        function atualizarNumeroOcorrencia() {
+            const numeroFormatado = String(numeroOcorrencia).padStart(4, '0');
+            document.getElementById('numOcorrencia').value = `Registro ${numeroFormatado}`;
+        }
+        
+        function gerarNumeroOcorrencia() {
+            numeroOcorrencia++;
+            atualizarNumeroOcorrencia();
+        }
+        
+        function voltarNumeroOcorrencia() {
+            if (numeroOcorrencia > 1) {
+                numeroOcorrencia--;
+                atualizarNumeroOcorrencia();
+            }
+        }
+        
+        function limparFormulario() {
+            document.getElementById("fichaRemocao").reset();
+            gerarNumeroOcorrencia();
+        }
+        
+        function baixarPDF() {
+            window.print();
+        }
+        
+        window.onload = atualizarNumeroOcorrencia;
+    </script>
+</head>
+<body>
+    <h2>Ficha de Remoção Bombeiro Civil</h2>
+    <form id="fichaRemocao">
+        <h3>Informações da Ocorrência</h3>
+        <div class="container">
+            <div class="campo">Data: <input type="date" name="data"></div>
+            <div class="campo">Hora: <input type="time" name="hora"></div>
+            <div class="campo">Nº da Ocorrência: <input type="text" id="numOcorrencia" readonly></div>
+            <div class="campo">Local: <input type="text" name="local"></div>
+            <div class="campo">Cidade: <input type="text" name="cidade"></div>
+            <div class="campo">Estado: <input type="text" name="estado"></div>
+        </div>
+        
+        <h3>Informações do Paciente</h3>
+        <div class="container">
+            <div class="campo">Nome: <input type="text" name="nomePaciente"></div>
+            <div class="campo">Idade: <input type="number" name="idadePaciente"></div>
+            <div class="campo">Sexo: <input type="text" name="sexo"></div>
+            <div class="campo">Documento: <input type="text" name="documento"></div>
+            <div class="campo">Telefone: <input type="tel" name="telefone"></div>
+            <div class="campo">Endereço: <input type="text" name="endereco"></div>
+            <div class="campo">Bairro: <input type="text" name="bairro"></div>
+            <div class="campo">Cidade: <input type="text" name="cidadePaciente"></div>
+        </div>
+
+        <h3>Informações do Acompanhante</h3>
+        <div class="container">
+            <div class="campo">Nome: <input type="text" name="nomeAcompanhante"></div>
+            <div class="campo">Telefone: <input type="tel" name="telefoneAcompanhante"></div>
+            <div class="campo">Grau de Parentesco: <input type="text" name="parentesco"></div>
+        </div>
+
+        <h3>Avaliação</h3>
+        <div class="container">
+            <div class="campo">PA: <input type="text" name="pa"></div>
+            <div class="campo">FC: <input type="text" name="fc"></div>
+            <div class="campo">FR: <input type="text" name="fr"></div>
+            <div class="campo">SPO2: <input type="text" name="spo2"></div>
+            <div class="campo">HGT: <input type="text" name="hgt"></div>
+            <div class="campo">T°C: <input type="text" name="temp"></div>
+        </div>
+        
+        <h3>Observações</h3>
+        <textarea name="observacoes"></textarea>
+
+        <h3>Profissional</h3>
+        <div class="container">
+            <div class="campo">Profissional: <select name="profissional">
+                <option value="">Selecione</option>
+                <option value="Profissional 1">Profissional 1</option>
+                <option value="Profissional 2">Profissional 2</option>
+            </select></div>
+        </div>
+        
+        <button type="button" onclick="baixarPDF()">
+            <span class="icon">🖨️</span> Baixar PDF
+        </button>
+        <button type="button" onclick="limparFormulario()">
+            <span class="icon">🔄</span> Recomeçar
+        </button>
+        <button type="button" onclick="voltarNumeroOcorrencia()">
+            <span class="icon">⬅️</span> Voltar
+        </button>
+        <button type="button" onclick="gerarNumeroOcorrencia()">
+            <span class="icon">➡️</span> Avançar
+        </button>
+    </form>
+</body>
+</html>
