@@ -6,13 +6,20 @@
     <title>Registro de Ocorrência</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f3f3f3;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             margin: 0;
+            padding: 0;
+            background-image: url('Fundosite.png'); /* Caminho para a imagem */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+        }
+        .content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: white;
+            font-family: Arial, sans-serif;
         }
         .login-container {
             background: #ffffff;
@@ -20,6 +27,7 @@
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             width: 300px;
+            z-index: 2;
         }
         .login-container h2 {
             text-align: center;
@@ -56,6 +64,11 @@
     </style>
 </head>
 <body>
+    <div class="content">
+        <h1>Bombeiro Civil 2025</h1>
+        <p>Bem-vindo ao site de registro de ocorrência.</p>
+    </div>
+
     <div class="login-container">
         <h2>Ocorrência24h</h2>
         <form id="loginForm">
@@ -64,7 +77,7 @@
                 <option value="ficha">Registro de Ocorrência</option>
                 <option value="orientação">Ficha de Orientações</option>
                 <option value="relatorio">Relatório de Plantão</option>
-                <option value="remocao">Remoção</option> <!-- Nova seleção -->
+                <option value="remocao">Remoção</option> <!-- Nova seleção adicionada -->
             </select>
             <input type="number" id="username" placeholder="Usuário (apenas números)" required>
             <input type="password" id="password" inputmode="numeric" placeholder="Senha (apenas números)" required>
