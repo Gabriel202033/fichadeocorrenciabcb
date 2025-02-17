@@ -1,45 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="Logo_socorrista_BCP.png" href="images/favicon.png">
-
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Regístro de ocorrência</title>
-  <style>
-    body {
-      margin: 0; /* Remove margens padrão */
-      padding: 0; /* Remove espaçamentos padrão */
-      background-image: url('Fundosite.png'); /* Caminho para a imagem */
-      background-size: cover; /* Faz com que a imagem cubra todo o fundo */
-      background-position: center; /* Centraliza a imagem no fundo */
-      background-repeat: no-repeat; /* Evita repetição da imagem */
-      height: 100vh; /* Faz com que o fundo ocupe a altura total da tela */
-    }
-    .content {
-      position: relative; /* Garante que o conteúdo seja posicionado acima do fundo */
-      z-index: 1; /* Mantém o conteúdo acima da imagem */
-      text-align: center; /* Centraliza o conteúdo */
-      color: white; /* Cor do texto para contraste */
-      font-family: Arial, sans-serif;
-    }
-  </style>
-</head>
-<body>
-  <div class="content">
-    <h1>Bombeiro Civil 2025</h1>
-    <p>Bem-vindo ao site de registro de ocorrência.</p>
-  </div>
-</body>
-</html>
-
-    
-    <title>Regístro de ocorrência</title>
+    <title>Registro de Ocorrência</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -97,9 +61,10 @@
         <form id="loginForm">
             <select id="fichaSelect" required>
                 <option value="" disabled selected>Selecione um sistema</option>
-                <option value="ficha">Regístro de Ocorrência</option>
+                <option value="ficha">Registro de Ocorrência</option>
                 <option value="orientação">Ficha de Orientações</option>
                 <option value="relatorio">Relatório de Plantão</option>
+                <option value="remocao">Remoção</option> <!-- Nova seleção -->
             </select>
             <input type="number" id="username" placeholder="Usuário (apenas números)" required>
             <input type="password" id="password" inputmode="numeric" placeholder="Senha (apenas números)" required>
@@ -125,6 +90,12 @@
         const validRelatorioUsers = {
             15191585488: 21012006, // Exemplo de login e senha
             55555: 6666
+        };
+
+        // Credenciais para a Remoção
+        const validRemocaoUsers = {
+            12345: 7890, // Exemplo de login e senha para "Remoção"
+            67890: 1234
         };
 
         document.getElementById('loginForm').addEventListener('submit', function(event) {
@@ -154,6 +125,13 @@
                     window.location.href = "relatório.html"; // Redireciona para o Relatório de Plantão
                 } else {
                     alert("Usuário ou senha inválidos para o Relatório de Plantão!");
+                }
+            } else if (selectedFicha === "remocao") {
+                // Verifica login para a Remoção
+                if (validRemocaoUsers[username] === password) {
+                    window.location.href = "remocao.html"; // Redireciona para a Remoção
+                } else {
+                    alert("Usuário ou senha inválidos para Remoção!");
                 }
             } else {
                 alert("Selecione uma ficha válida!");
