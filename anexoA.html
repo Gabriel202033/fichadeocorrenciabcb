@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <form action="https://formsubmit.co/gabrielaph2000@gmail.com" method="POST">
+    <title>Formulário de Registro de Atividades de Bombeiros</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid #000;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .checkbox-group label {
+            width: 50%;
+            margin-bottom: 5px;
+        }
+        .input-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        .input-group label {
+            flex: 1 1 30%;
+            margin-bottom: 5px;
+        }
+        .input-group input {
+            flex: 1 1 70%;
+        }
+        .section-title {
+            background-color: #e4e4e4;
+            font-weight: bold;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+        fieldset {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        legend {
+            font-weight: bold;
+            padding: 0 10px;
+        }
+    .victim-table th, .victim-table td {
+    padding: 8px;
+    text-align: center;
+}
+    
+.victim-table td input[type="number"], .victim-table td input[type="text"]:nth-child(4), .victim-table td input[type="number"]:nth-child(6), .victim-table td input[type="text"]:nth-child(8) {
+    width: 30px; /* Ajustando os campos de nº, tipo, idade e problemas encontrados para ficarem menores */
+}
+
+.victim-table td input[type="text"]:nth-child(2) {
+    width: 250px; /* Aumentando a largura do campo "Nome" */
+}
+
+.victim-table td input[type="radio"], .victim-table td input[type="checkbox"] {
+    margin: 0 5px;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Regístro (A)</h1>
+        <h2>Formulário para Registro de Atividades de Bombeiros</h2>
+
+        <fieldset>
+            <legend>Ficha</legend>
+            <table>
+                <tr>
+                    <td rowspan="2" style="text-align: center; width: 25%;">.</td>
+                    <td colspan="3">Identificação da Entidade Relatora</td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <input type="text" style="width: 100%;" placeholder="Nome da entidade relatora">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Situação (assinalar apenas uma)</td>
+                    <td>
+                        <input type="checkbox" id="com-intervencao"> Com intervenção<br>
+                        <input type="checkbox" id="sem-intervencao"> Sem intervenção<br>
+                        <input type="checkbox" id="engano"> Engano<br>
+                        <input type="checkbox" id="trote"> Trote<br>
+                        <input type="checkbox" id="solucionado"> Solucionado
+                    </td>
+                    <td>Número do Registro</td>
+                    <td><input type="text" placeholder="Número"></td>
+                </tr>
+                <tr>
+                    <td colspan="3">Número de folhas</td>
+                    <td><input type="text" placeholder="Quantidade"></td>
+                </tr>
+            </table>
+        </fieldset>
+
+        <fieldset>
+            <legend>Identificação da Ocorrência</legend>
+            <table>
+                <tr>
+                    <td>Data: <input type="date"></td>
+                    <td>Hora da chamada: <input type="time"></td>
+                    <td>Hora no local: <input type="time"></td>
+                    <td>Hora de término: <input type="time"></td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        Endereço: <input type="text" style="width: 100%;" placeholder="Av., Rua, Nº, etc.">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">Complemento: <input type="text" style="width: 100%;"></td>
+                    <td>Bairro: <input type="text"></td>
+                    <td>Município: <input type="text"></td>
+                </tr>
+                <tr>
+                    <td>CEP: <input type="text"></td>
+                    <td>UF: <input type="text"></td>
+                    <td>Tel.: <input type="text"></td>
+                    <td>Solicitante: <input type="text"></td>
+                </tr>
+            </table>
+        </fieldset>
+
+        <fieldset>
+            <legend>Características do Local da Ocorrência</legend>
+            <div class="checkbox-group">
+                <label><input type="checkbox" id="residencial"> Residencial</label>
+                <label><input type="checkbox" id="comercial"> Comercial</label>
+                <label><input type="checkbox" id="industrial"> Industrial</label>
+                <label><input type="checkbox" id="ensino"> De ensino</label>
+                <label><input type="checkbox" id="saude"> De saúde</label>
+                <label><input type="checkbox" id="lazer"> De lazer e/ou cultura</label>
+                <label><input type="checkbox" id="rodovia"> Rodovia/estrada</label>
+                <label><input type="checkbox" id="terminal"> Terminal de passageiro</label>
+                <label><input type="checkbox" id="terreno-baldio"> Terreno baldio</label>
+                <label><input type="checkbox" id="mata"> Mata/floresta</label>
+                <label><input type="checkbox" id="rio"> Rio</label>
+                <label><input type="checkbox" id="lago"> Lago</label>
+                <label><input type="checkbox" id="mar"> Mar</label>
+                <label><input type="checkbox" id="agropecuario"> Agropecuário</label>
+                <label><input type="checkbox" id="outro-local"> Outro: <input type="text" id="outro-local-text" placeholder="Especificar"></label>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Tipo de Atividade</legend>
+            <div class="checkbox-group">
+                <label><input type="checkbox" id="combate-incendio"> Combate a incêndio</label>
+                <label><input type="checkbox" id="salvamento"> Salvamento</label>
+                <label><input type="checkbox" id="resgate"> Resgate</label>
+                <label><input type="checkbox" id="prevencao"> Prevenção</label>
+                <label><input type="checkbox" id="outro-tipo"> Outros: <input type="text" id="outro-tipo-text" placeholder="Especificar"></label>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Combate a Incêndio</legend>
+            <table>
+                <tr>
+                    <td>Em edificações</td>
+                    <td>
+                        <input type="checkbox" id="alvenaria"> Alvenaria<br>
+                        <input type="checkbox" id="concreto"> Concreto<br>
+                        <input type="checkbox" id="madeira"> Madeira<br>
+                        <input type="checkbox" id="metalica"> Metálica<br>
+                        <input type="checkbox" id="outro-edificacao"> Outro: <input type="text" id="outro-edificacao-text" placeholder="Especificar">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Em meio de transporte</td>
+                    <td>
+                        <input type="checkbox" id="aeroviario"> Aeroviário<br>
+                        <input type="checkbox" id="ferroviario"> Ferroviário/metrô<br>
+                        <input type="checkbox" id="rodoviario"> Rodoviário<br>
+                        <input type="checkbox" id="outro-transporte"> Outro: <input type="text" id="outro-transporte-text" placeholder="Especificar">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Em vegetação</td>
+                    <td>
+                        <input type="checkbox" id="capoeira"> Capoeira<br>
+                        <input type="checkbox" id="cultura-agricola"> Cultura agrícola<br>
+                        <input type="checkbox" id="floresta-plantada"> Floresta plantada<br>
+                        <input type="checkbox" id="mato"> Mato<br>
+                      <input type="checkbox" id="Pasto"> Pasto<br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Área nativa</td>
+                    <td>
+                        <input type="checkbox" id="Catinga"> Catinga<br>
+                        <input type="checkbox" id="Campo"> Campo<br>
+                        <input type="checkbox" id="Cerrado"> Cerrado<br>
+                        <input type="checkbox" id="Mata/floresta"> Mata/floresta<br>
+                        <input type="checkbox" id="outro-vege"> Outro: <input type="text" id="outro-vege-text" placeholder="Especificar">
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+
+        <fieldset>
+            <legend>Área Atingida</legend>
+            <table>
+                <tr>
+                    <td>Edificada (m²)</td>
+                    <td>Não edificada m² (se urbana)</td>
+                    <td>Total m² (se rural)</td>
+                </tr>
+                <tr>
+                    <td><input type="text" placeholder=></td>
+                    <td><input type="text" placeholder="Área urbana"></td>
+                    <td><input type="text" placeholder="Área rual"></td>
+                </tr>
+            </table>
+          
+           <legend>Área total</legend>
+            <table>
+                <tr>
+                    <td>Edificada (m²)</td>
+                    <td>Não edificada m² (se urbana)</td>
+                    <td>Total m² (se rural)</td>
+                </tr>
+                <tr>
+                    <td><input type="text" placeholder=></td>
+                    <td><input type="text" placeholder="Área urbana"></td>
+                    <td><input type="text" placeholder="Área rual"></td>
+                </tr>
+            </table>
+        </fieldset>
+
+        <fieldset>
+            <legend>Sistemas de Proteção Contra Incêndio</legend>
+            <div class="checkbox-group">
+                <label><input type="checkbox" id="extintor"> Extintor de incêndio</label>
+                <label><input type="checkbox" id="hidrantes"> Sistema de hidrantes</label>
+                <label><input type="checkbox" id="alarme-manual"> Sistema de alarme manual</label>
+                <label><input type="checkbox" id="iluminacao-emergencia"> Sistema de iluminação de emergência</label>
+                <label><input type="checkbox" id="chuveiros-automaticos"> Sistema de chuveiros automáticos</label>
+                <label><input type="checkbox" id="detecao-automatica"> Sistema automático de detecção</label>
+                <label><input type="checkbox" id="saida-emergencia"> Saída de emergência</label>
+                <label><input type="checkbox" id="aceiro"> Aceiro</label>
+                <label><input type="checkbox" id="torre-observacao"> Torre de observação</label>
+            </div>
+        </fieldset>
+      
+      <fieldset>
+        <legend>Haverá perícia?</legend>
+        <div class="checkbox-group">
+          <label><input type="checkbox" id="Haverá perícia">Sim</label>
+          <label><input type="checkbox" id="Haverá perícia">Não</label>
+          <label><input type="checkbox" id="Corpo de bombeiros"> Corpo de bombeiros</label>
+          <label><input type="checkbox" id= " Departamento e polícia técnica"> Departamento de polícia técnica</label>
+          <label><input type="checkbox" id="Entidade privada"> Entidade privada</label>
+          <label><input type="checkbox" id="outro-orgao"> Outro: <input type="text" id="outro-orgao-text" placeholder="Especificar"></label>
+      </fieldset>
+
+        <fieldset>
+    <legend class="section-title">Possível Causa do Incêndio</legend>
+    <div class="checkbox-group">
+        <label><input type="checkbox" id="acumulo de material gorduroso"> Acúmulo de material gorduroso</label>
+        <label><input type="checkbox" id="curto-circuito"> Curto-circuito</label>
+        <label><input type="checkbox" id="ignicao-oleo-iritadeira"> Ignição em óleo de iritadeira</label>
+        <label><input type="checkbox" id="trabalho-soldagem"> Trabalho de soldagem</label>
+        <label><input type="checkbox" id="balao"> Balão</label>
+        <label><input type="checkbox" id="displicencia-cozinhar"> Displicência ao cozinhar</label>
+        <label><input type="checkbox" id="ignicao-espontanea"> Ignição espontânea</label>
+        <label><input type="checkbox" id="vazamento-gas"> Vazamento de gás</label>
+        <label><input type="checkbox" id="brincadeira-crianca"> Brincadeira de criança</label>
+        <label><input type="checkbox" id="ferro-passar-roupa"> Ferro de passar roupa</label>
+        <label><input type="checkbox" id="fogos-artificio"> Fogos de artifício</label>
+        <label><input type="checkbox" id="liquidos-inflamaveis"> Líquidos inflamáveis</label>
+        <label><input type="checkbox" id="vela"> Vela</label>
+        <label><input type="checkbox" id="cigarro-isqueiro-fosforo"> Cigarro, isqueiro ou fósforo</label>
+        <label><input type="checkbox" id="superaquecimento-equipe"> Superaquecimento de equipamento</label>
+        <label><input type="checkbox" id="outra-causa"> Outra: <input type="text" id="outra-causa-text" placeholder="Especificar"></label>
+    </div>
+</fieldset>
+        
+<fieldset>
+    <legend class="section-title">Salvamento</legend>
+    <div class="checkbox-group">
+        <label><input type="checkbox" id="salvamento-terrestre"> Terrestre</label>
+        <label><input type="checkbox" id="salvamento-aquatico"> Aquático</label>
+    </div>
+</fieldset>
+        
+        <fieldset>
+    <legend class="section-title">Discriminação</legend>
+    <div class="checkbox-group">
+        <label><input type="checkbox" id="acidente-meio-transporte"> Acidente com meio de transporte</label>
+        <label><input type="checkbox" id="afogamento"> Afogamento</label>
+        <label><input type="checkbox" id="alagamento"> Alagamento</label>
+        <label><input type="checkbox" id="desabamento-desmoronamento"> Desabamento/desmoronamento</label>
+        <label><input type="checkbox" id="deslizamento"> Deslizamento</label>
+        <label><input type="checkbox" id="outro-discriminacao"> Outro: <input type="text" id="outro-discriminacao-text" placeholder="Especificar"></label>
+    </div>
+</fieldset>
+        
+       <fieldset>
+    <legend class="section-title">Quantificação</legend>
+    <div class="checkbox-group">
+        <label><input type="checkbox" id="busca" onclick="toggleQuantity('busca-quantidade')"> Busca</label>
+        <div id="busca-quantidade" style="display: none; margin-left: 20px;">
+            Quantidade: <input type="number" placeholder="Quantidade" id="busca-quantidade-input">
+        </div>
+
+        <label><input type="checkbox" id="resgate" onclick="toggleQuantity('resgate-quantidade')"> Resgate</label>
+        <div id="resgate-quantidade" style="display: none; margin-left: 20px;">
+            Quantidade: <input type="number" placeholder="Quantidade" id="resgate-quantidade-input">
+        </div>
+
+        <label><input type="checkbox" id="animal" onclick="toggleQuantity('animal-quantidade')"> Animal</label>
+        <div id="animal-quantidade" style="display: none; margin-left: 20px;">
+            Quantidade: <input type="number" placeholder="Quantidade" id="animal-quantidade-input">
+        </div>
+
+        <label><input type="checkbox" id="cadaver" onclick="toggleQuantity('cadaver-quantidade')"> Cadáver</label>
+        <div id="cadaver-quantidade" style="display: none; margin-left: 20px;">
+            Quantidade: <input type="number" placeholder="Quantidade" id="cadaver-quantidade-input">
+        </div>
+
+        <label><input type="checkbox" id="objeto" onclick="toggleQuantity('objeto-quantidade')"> Objeto</label>
+        <div id="objeto-quantidade" style="display: none; margin-left: 20px;">
+            Quantidade: <input type="number" placeholder="Quantidade" id="objeto-quantidade-input">
+        </div>
+
+        <label><input type="checkbox" id="pessoa" onclick="toggleQuantity('pessoa-quantidade')"> Pessoa</label>
+        <div id="pessoa-quantidade" style="display: none; margin-left: 20px;">
+            Quantidade: <input type="number" placeholder="Quantidade" id="pessoa-quantidade-input">
+        </div>
+
+        <label><input type="checkbox" id="veiculo-aeroviario" onclick="toggleQuantity('veiculo-aeroviario-quantidade')"> Veículo aeroviário</label>
+        <div id="veiculo-aeroviario-quantidade" style="display: none; margin-left: 20px;">
+            Quantidade: <input type="number" placeholder="Quantidade" id="veiculo-aeroviario-quantidade-input">
+        </div>
+
+        <label><input type="checkbox" id="veiculo-aquatico" onclick="toggleQuantity('veiculo-aquatico-quantidade')"> Veículo aquático</label>
+        <div id="veiculo-aquatico-quantidade" style="display: none; margin-left: 20px;">
+            Quantidade: <input type="number" placeholder="Quantidade" id="veiculo-aquatico-quantidade-input">
+        </div>
+
+        <label><input type="checkbox" id="veiculo-ferroviario" onclick="toggleQuantity('veiculo-ferroviario-quantidade')"> Veículo ferroviário</label>
+        <div id="veiculo-ferroviario-quantidade" style="display: none; margin-left: 20px;">
+            Quantidade: <input type="number" placeholder="Quantidade" id="veiculo-ferroviario-quantidade-input">
+        </div>
+
+        <label><input type="checkbox" id="veiculo-rodoviario" onclick="toggleQuantity('veiculo-rodoviario-quantidade')"> Veículo rodoviário</label>
+        <div id="veiculo-rodoviario-quantidade" style="display: none; margin-left: 20px;">
+            Quantidade: <input type="number" placeholder="Quantidade" id="veiculo-rodoviario-quantidade-input">
+        </div>
+
+        <label><input type="checkbox" id="outro-quantificacao" onclick="toggleQuantity('outro-quantificacao-quantidade')"> Outro: <input type="text" id="outro-quantificacao-text" placeholder="Especificar"></label>
+        <div id="outro-quantificacao-quantidade" style="display: none; margin-left: 20px;">
+            Quantidade: <input type="number" placeholder="Quantidade" id="outro-quantificacao-quantidade-input">
+        </div>
+    </div>
+</fieldset>
+
+<script>
+    function toggleQuantity(id) {
+        const quantityDiv = document.getElementById(id);
+        if (quantityDiv.style.display === "none") {
+            quantityDiv.style.display = "block";
+        } else {
+            quantityDiv.style.display = "none";
+        }
+    }
+</script> 
+        
+        <fieldset>
+    <legend class="section-title">Prevenção e Auxílio</legend>
+    <div class="checkbox-group">
+        <label><input type="checkbox" id="abastecimento-agua"> Abastecimento d'água</label><br>
+        <label><input type="checkbox" id="lavagem-estabelecimento"> Lavagem de estabelecimento</label><br>
+        <label><input type="checkbox" id="abertura-imovel"> Abertura de imóvel</label><br>
+        <label><input type="checkbox" id="protecao-banhistas"> Proteção a banhistas</label><br>
+        <label><input type="checkbox" id="atividade-educacional"> Atividade educacional</label><br>
+        <label><input type="checkbox" id="protecao-autoridades"> Proteção a autoridades</label><br>
+        <label><input type="checkbox" id="corte-poda-arvore"> Corte/poda de árvore</label><br>
+        <label><input type="checkbox" id="reparo-adriça"> Reparo ou colocação de adriça</label><br>
+        <label><input type="checkbox" id="desfile-demonstracao"> Desfile/demonstração</label><br>
+        <label><input type="checkbox" id="transporte"> Transporte</label><br>
+        <label><input type="checkbox" id="esgotamento"> Esgotamento</label><br>
+        <label><input type="checkbox" id="vazamento-glp"> Vazamento de GLP</label><br>
+        <label><input type="checkbox" id="exterminio-insetos"> Extermínio de insetos</label><br>
+        <label><input type="checkbox" id="vazamento-produtos-perigosos"> Vazamento de produtos perigosos</label><br>
+        <label><input type="checkbox" id="lavagem-pista"> Lavagem de pista</label><br>
+        <label><input type="checkbox" id="vistoria-tecnica-operacional"> Vistoria técnica operacional</label><br>
+        <label><input type="checkbox" id="protecao-local-concentracao-publica"> Proteção em local de concentração pública</label><br>
+        <label><input type="checkbox" id="outro"> Outro <input type="text" id="outro-text" placeholder="Especificar"></label>
+    </div>
+</fieldset>
+          
+          <fieldset>
+    <legend class="section-title">Atendimento a Vítimas</legend>
+
+    <table class="victim-table">
+        <thead>
+            <tr>
+                <th>Nº</th>
+                <th>Nome</th>
+                <th>Atendimento Pré-Hospitalar</th>
+                <th>Tipo (ver legenda)</th>
+                <th>Sexo</th>
+                <th>Idade</th>
+                <th>Nível de Lesão</th>
+                <th>Problemas Encontrados (ver legenda)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Vítima 1 -->
+            <tr>
+                <td><input type="number" id="numero-vitima-1" value="1" readonly></td>
+                <td><input type="text" id="nome-vitima-1" placeholder="Nome" class="victima-input"></td>
+                <td>
+                    <input type="checkbox" id="atendimento-pre-hospitalar-1-sim"> Sim
+                    <input type="checkbox" id="atendimento-pre-hospitalar-1-nao"> Não
+                </td>
+                <td><input type="text" id="tipo-atendimento-1" placeholder="Tipo (ver legenda)" class="victima-input"></td>
+                <td>
+                    <input type="radio" id="sexo-m-1" name="sexo-1" value="M"> M
+                    <input type="radio" id="sexo-f-1" name="sexo-1" value="F"> F
+                </td>
+                <td><input type="number" id="idade-vitima-1" placeholder="Idade" class="victima-input"></td>
+                <td>
+                    <input type="checkbox" id="ilesa-1"> Ilesa
+                    <input type="checkbox" id="ferida-1"> Ferida
+                    <input type="checkbox" id="fatal-1"> Fatal
+                </td>
+                <td><input type="text" id="probas-encontradas-1" placeholder="Provas encontradas" class="victima-input"></td>
+            </tr>
+
+            <!-- Vítima 2 -->
+            <tr>
+                <td><input type="number" id="numero-vitima-2" value="2" readonly></td>
+                <td><input type="text" id="nome-vitima-2" placeholder="Nome" class="victima-input"></td>
+                <td>
+                    <input type="checkbox" id="atendimento-pre-hospitalar-2-sim"> Sim
+                    <input type="checkbox" id="atendimento-pre-hospitalar-2-nao"> Não
+                </td>
+                <td><input type="text" id="tipo-atendimento-2" placeholder="Tipo (ver legenda)" class="victima-input"></td>
+                <td>
+                    <input type="radio" id="sexo-m-2" name="sexo-2" value="M"> M
+                    <input type="radio" id="sexo-f-2" name="sexo-2" value="F"> F
+                </td>
+                <td><input type="number" id="idade-vitima-2" placeholder="Idade" class="victima-input"></td>
+                <td>
+                    <input type="checkbox" id="ilesa-2"> Ilesa
+                    <input type="checkbox" id="ferida-2"> Ferida
+                    <input type="checkbox" id="fatal-2"> Fatal
+                </td>
+                <td><input type="text" id="probas-encontradas-2" placeholder="Provas encontradas" class="victima-input"></td>
+            </tr>
+
+            <!-- Vítima 3 -->
+            <tr>
+                <td><input type="number" id="numero-vitima-3" value="3" readonly></td>
+                <td><input type="text" id="nome-vitima-3" placeholder="Nome" class="victima-input"></td>
+                <td>
+                    <input type="checkbox" id="atendimento-pre-hospitalar-3-sim"> Sim
+                    <input type="checkbox" id="atendimento-pre-hospitalar-3-nao"> Não
+                </td>
+                <td><input type="text" id="tipo-atendimento-3" placeholder="Tipo (ver legenda)" class="victima-input"></td>
+                <td>
+                    <input type="radio" id="sexo-m-3" name="sexo-3" value="M"> M
+                    <input type="radio" id="sexo-f-3" name="sexo-3" value="F"> F
+                </td>
+                <td><input type="number" id="idade-vitima-3" placeholder="Idade" class="victima-input"></td>
+                <td>
+                    <input type="checkbox" id="ilesa-3"> Ilesa
+                    <input type="checkbox" id="ferida-3"> Ferida
+                    <input type="checkbox" id="fatal-3"> Fatal
+                </td>
+                <td><input type="text" id="probas-encontradas-3" placeholder="Provas encontradas" class="victima-input"></td>
+            </tr>
+
+            <!-- Vítima 4 -->
+            <tr>
+                <td><input type="number" id="numero-vitima-4" value="4" readonly></td>
+                <td><input type="text" id="nome-vitima-4" placeholder="Nome" class="victima-input"></td>
+                <td>
+                    <input type="checkbox" id="atendimento-pre-hospitalar-4-sim"> Sim
+                    <input type="checkbox" id="atendimento-pre-hospitalar-4-nao"> Não
+                </td>
+                <td><input type="text" id="tipo-atendimento-4" placeholder="Tipo (ver legenda)" class="victima-input"></td>
+                <td>
+                    <input type="radio" id="sexo-m-4" name="sexo-4" value="M"> M
+                    <input type="radio" id="sexo-f-4" name="sexo-4" value="F"> F
+                </td>
+                <td><input type="number" id="idade-vitima-4" placeholder="Idade" class="victima-input"></td>
+                <td>
+                    <input type="checkbox" id="ilesa-4"> Ilesa
+                    <input type="checkbox" id="ferida-4"> Ferida
+                    <input type="checkbox" id="fatal-4"> Fatal
+                </td>
+                <td><input type="text" id="probas-encontradas-4" placeholder="Provas encontradas" class="victima-input"></td>
+            </tr>
+
+            <!-- Vítima 5 -->
+            <tr>
+                <td><input type="number" id="numero-vitima-5" value="5" readonly></td>
+                <td><input type="text" id="nome-vitima-5" placeholder="Nome" class="victima-input"></td>
+                <td>
+                    <input type="checkbox" id="atendimento-pre-hospitalar-5-sim"> Sim
+                    <input type="checkbox" id="atendimento-pre-hospitalar-5-nao"> Não
+                </td>
+                <td><input type="text" id="tipo-atendimento-5" placeholder="Tipo (ver legenda)" class="victima-input"></td>
+                <td>
+                    <input type="radio" id="sexo-m-5" name="sexo-5" value="M"> M
+                    <input type="radio" id="sexo-f-5" name="sexo-5" value="F"> F
+                </td>
+                <td><input type="number" id="idade-vitima-5" placeholder="Idade" class="victima-input"></td>
+                <td>
+                    <input type="checkbox" id="ilesa-5"> Ilesa
+                    <input type="checkbox" id="ferida-5"> Ferida
+                    <input type="checkbox" id="fatal-5"> Fatal
+                </td>
+                <td><input type="text" id="probas-encontradas-5" placeholder="Provas encontradas" class="victima-input"></td>
+            </tr>
+
+            <!-- Vítima 6 -->
+            <tr>
+                <td><input type="number" id="numero-vitima-6" value="6" readonly></td>
+                <td><input type="text" id="nome-vitima-6" placeholder="Nome" class="victima-input"></td>
+                <td>
+                    <input type="checkbox" id="atendimento-pre-hospitalar-6-sim"> Sim
+                    <input type="checkbox" id="atendimento-pre-hospitalar-6-nao"> Não
+                </td>
+                <td><input type="text" id="tipo-atendimento-6" placeholder="Tipo (ver legenda)" class="victima-input"></td>
+                <td>
+                    <input type="radio" id="sexo-m-6" name="sexo-6" value="M"> M
+                    <input type="radio" id="sexo-f-6" name="sexo-6" value="F"> F
+                </td>
+                <td><input type="number" id="idade-vitima-6" placeholder="Idade" class="victima-input"></td>
+                <td>
+                    <input type="checkbox" id="ilesa-6"> Ilesa
+                    <input type="checkbox" id="ferida-6"> Ferida
+                    <input type="checkbox" id="fatal-6"> Fatal
+                </td>
+                <td><input type="text" id="probas-encontradas-6" placeholder="Provas encontradas" class="victima-input"></td>
+            </tr>
+
+            <!-- Vítima 7 -->
+            <tr>
+                <td><input type="number" id="numero-vitima-7" value="7" readonly></td>
+                <td><input type="text" id="nome-vitima-7" placeholder="Nome" class="victima-input"></td>
+                <td>
+                    <input type="checkbox" id="atendimento-pre-hospitalar-7-sim"> Sim
+                    <input type="checkbox" id="atendimento-pre-hospitalar-7-nao"> Não
+                </td>
+                <td><input type="text" id="tipo-atendimento-7" placeholder="Tipo (ver legenda)" class="victima-input"></td>
+                <td>
+                    <input type="radio" id="sexo-m-7" name="sexo-7" value="M"> M
+                    <input type="radio" id="sexo-f-7" name="sexo-7" value="F"> F
+                </td>
+                <td><input type="number" id="idade-vitima-7" placeholder="Idade" class="victima-input"></td>
+                <td>
+                    <input type="checkbox" id="ilesa-7"> Ilesa
+                    <input type="checkbox" id="ferida-7"> Ferida
+                    <input type="checkbox" id="fatal-7"> Fatal
+                </td>
+                <td><input type="text" id="probas-encontradas-7" placeholder="Provas encontradas" class="victima-input"></td>
+            </tr>
+
+            <!-- Vítima 8 -->
+            <tr>
+                <td><input type="number" id="numero-vitima-8" value="8" readonly></td>
+                <td><input type="text" id="nome-vitima-8" placeholder="Nome" class="victima-input"></td>
+                <td>
+                    <input type="checkbox" id="atendimento-pre-hospitalar-8-sim"> Sim
+                    <input type="checkbox" id="atendimento-pre-hospitalar-8-nao"> Não
+                </td>
+                <td><input type="text" id="tipo-atendimento-8" placeholder="Tipo (ver legenda)" class="victima-input"></td>
+                <td>
+                    <input type="radio" id="sexo-m-8" name="sexo-8" value="M"> M
+                    <input type="radio" id="sexo-f-8" name="sexo-8" value="F"> F
+                </td>
+                <td><input type="number" id="idade-vitima-8" placeholder="Idade" class="victima-input"></td>
+                <td>
+                    <input type="checkbox" id="ilesa-8"> Ilesa
+                    <input type="checkbox" id="ferida-8"> Ferida
+                    <input type="checkbox" id="fatal-8"> Fatal
+                </td>
+                <td><input type="text" id="probas-encontradas-8" placeholder="Provas encontradas" class="victima-input"></td>
+            </tr>
+
+            <!-- Vítima 9 -->
+            <tr>
+                <td><input type="number" id="numero-vitima-9" value="9" readonly></td>
+                <td><input type="text" id="nome-vitima-9" placeholder="Nome" class="victima-input"></td>
+                <td>
+                    <input type="checkbox" id="atendimento-pre-hospitalar-9-sim"> Sim
+                    <input type="checkbox" id="atendimento-pre-hospitalar-9-nao"> Não
+                </td>
+                <td><input type="text" id="tipo-atendimento-9" placeholder="Tipo (ver legenda)" class="victima-input"></td>
+                <td>
+                    <input type="radio" id="sexo-m-9" name="sexo-9" value="M"> M
+                    <input type="radio" id="sexo-f-9" name="sexo-9" value="F"> F
+                </td>
+                <td><input type="number" id="idade-vitima-9" placeholder="Idade" class="victima-input"></td>
+                <td>
+                    <input type="checkbox" id="ilesa-9"> Ilesa
+                    <input type="checkbox" id="ferida-9"> Ferida
+                    <input type="checkbox" id="fatal-9"> Fatal
+                </td>
+                <td><input type="text" id="probas-encontradas-9" placeholder="Provas encontradas" class="victima-input"></td>
+            </tr>
+
+            <!-- Vítima 10 -->
+            <tr>
+                <td><input type="number" id="numero-vitima-10" value="10" readonly></td>
+                <td><input type="text" id="nome-vitima-10" placeholder="Nome" class="victima-input"></td>
+                <td>
+                    <input type="checkbox" id="atendimento-pre-hospitalar-10-sim"> Sim
+                    <input type="checkbox" id="atendimento-pre-hospitalar-10-nao"> Não
+                </td>
+                <td><input type="text" id="tipo-atendimento-10" placeholder="Tipo (ver legenda)" class="victima-input"></td>
+                <td>
+                    <input type="radio" id="sexo-m-10" name="sexo-10" value="M"> M
+                    <input type="radio" id="sexo-f-10" name="sexo-10" value="F"> F
+                </td>
+                <td><input type="number" id="idade-vitima-10" placeholder="Idade" class="victima-input"></td>
+                <td>
+                    <input type="checkbox" id="ilesa-10"> Ilesa
+                    <input type="checkbox" id="ferida-10"> Ferida
+                    <input type="checkbox" id="fatal-10"> Fatal
+                </td>
+                <td><input type="text" id="probas-encontradas-10" placeholder="Provas encontradas" class="victima-input"></td>
+            </tr>
+        </tbody>
+    </table>
+</fieldset>
+        
+          <fieldset>
+    <legend class="section-title">Legenda - Atendimento a Vítimas</legend>
+    <div class="legend-item">
+        <strong>Tipo (ver legenda):</strong>
+        <ul>
+            <li><strong>(1) Não Bombeiro</strong> - Pessoa que não é bombeiro.</li>
+            <li><strong>(2) Bombeiro Profissional</strong> - Bombeiro que atua de forma profissional.</li>
+            <li><strong>(3) Bombeiro Voluntário</strong> - Bombeiro que atua de forma voluntária.</li>
+        </ul>
+    </div>
+</fieldset>
+          
+          <fieldset>
+    <legend class="section-title">Legenda - Atendimento a Vítimas</legend>
+    <div class="legend-item">
+        <strong>Problemas Encontrados (ver legenda):</strong>
+        <ul>
+            <li><strong>(1) Cardíaco</strong> - Problema relacionado ao coração.</li>
+            <li><strong>(2) Caso clínico</strong> - Situação clínica que precisa de avaliação médica.</li>
+            <li><strong>(3) Choque</strong> - Condição de choque, com risco para os sistemas vitais.</li>
+            <li><strong>(4) Coma</strong> - Estado de inconsciência profunda e prolongada.</li>
+            <li><strong>(5) Convulsão</strong> - Movimento involuntário e descontrolado do corpo.</li>
+            <li><strong>(6) Evisceração</strong> - Exposição dos órgãos internos devido a ferimentos.</li>
+            <li><strong>(7) Ferimento por arma de fogo</strong> - Lesão causada por projétil de arma de fogo.</li>
+            <li><strong>(8) Ferimento por arma branca</strong> - Lesão causada por objetos cortantes.</li>
+            <li><strong>(9) Fratura</strong> - Quebra ou fratura de ossos.</li>
+            <li><strong>(10) Hemorragia</strong> - Sangramento excessivo.</li>
+            <li><strong>(11) Neurológico</strong> - Problema relacionado ao sistema nervoso.</li>
+            <li><strong>(12) Obstétrico</strong> - Problemas relacionados à gestação ou parto.</li>
+            <li><strong>(13) Psiquiátrico</strong> - Transtornos mentais ou comportamentais.</li>
+            <li><strong>(14) Queimadura</strong> - Lesão causada por calor, frio, eletricidade, etc.</li>
+            <li><strong>(15) Respiratório</strong> - Problemas relacionados à respiração ou pulmões.</li>
+            <li><strong>(16) Trauma de coluna</strong> - Lesão na coluna vertebral.</li>
+            <li><strong>(17) Trauma de crânio</strong> - Lesão na cabeça ou no crânio.</li>
+            <li><strong>(18) Outro</strong> - Outro tipo de problema não listado.</li>
+        </ul>
+    </div>
+</fieldset>
+          
+          <fieldset>
+    <legend class="section-title">Total de Vítimas</legend>
+    <div class="input-group" style="display: flex; justify-content: space-between;">
+        <div style="flex: 1; margin-right: 10px;">
+            <label for="illesas">Ilesas:</label>
+            <input type="text" id="illesas" name="illesas" placeholder="Quantidade de vítimas ilesas">
+        </div>
+        <div style="flex: 1; margin-right: 10px;">
+            <label for="feridas">Feridas:</label>
+            <input type="text" id="feridas" name="feridas" placeholder="Quantidade de vítimas feridas">
+        </div>
+        <div style="flex: 1;">
+            <label for="fatais">Fatais:</label>
+            <input type="text" id="fatais" name="fatais" placeholder="Quantidade de vítimas fatais">
+        </div>
+    </div>
+</fieldset>
+          
+       <fieldset>
+    <legend class="section-title">Recursos Empregados</legend>
+    
+    <div class="section-title">Veículos</div>
+    <table>
+        <tr>
+            <th>Tipo</th>
+            <th>Discriminação</th>
+            <th>Quantidade</th>
+        </tr>
+        <tr>
+            <td>Atendimento pré-hospitalar</td>
+            <td><input type="text" name="atendimento_pre_hospitalar" placeholder="Discriminação"></td>
+            <td><input type="text" name="quantidade_atendimento_pre_hospitalar" placeholder="Quantidade"></td>
+        </tr>
+        <tr>
+            <td>Incêndio</td>
+            <td><input type="text" name="incendio" placeholder="Discriminação"></td>
+            <td><input type="text" name="quantidade_incendio" placeholder="Quantidade"></td>
+        </tr>
+        <tr>
+            <td>Salvamento</td>
+            <td><input type="text" name="salvamento" placeholder="Discriminação"></td>
+            <td><input type="text" name="quantidade_salvamento" placeholder="Quantidade"></td>
+        </tr>
+        <tr>
+            <td>Aquático</td>
+            <td><input type="text" name="aquatico" placeholder="Discriminação"></td>
+            <td><input type="text" name="quantidade_aquatico" placeholder="Quantidade"></td>
+        </tr>
+        <tr>
+            <td>Avião</td>
+            <td><input type="text" name="aviao" placeholder="Discriminação"></td>
+            <td><input type="text" name="quantidade_aviao" placeholder="Quantidade"></td>
+        </tr>
+        <tr>
+            <td>Helicóptero</td>
+            <td><input type="text" name="helicoptero" placeholder="Discriminação"></td>
+            <td><input type="text" name="quantidade_helicoptero" placeholder="Quantidade"></td>
+        </tr>
+        <tr>
+            <td>Outro</td>
+            <td><input type="text" name="outro_veiculo" placeholder="Discriminação"></td>
+            <td><input type="text" name="quantidade_outro_veiculo" placeholder="Quantidade"></td>
+        </tr>
+    </table>
+
+    <div class="section-title">Entidade/Quantidade</div>
+    <table>
+        <tr>
+            <th>Entidade</th>
+            <th>Quantidade</th>
+        </tr>
+        <tr>
+            <td>Corpo de Bombeiros</td>
+            <td><input type="text" name="quantidade_corpo_bombeiros" placeholder="Quantidade"></td>
+        </tr>
+        <tr>
+            <td>Polícia Militar</td>
+            <td><input type="text" name="quantidade_policia_militar" placeholder="Quantidade"></td>
+        </tr>
+        <tr>
+            <td>Polícia Rodoviária Federal</td>
+            <td><input type="text" name="quantidade_policia_rodoviaria_federal" placeholder="Quantidade"></td>
+        </tr>
+        <tr>
+            <td>Defesa Civil</td>
+            <td><input type="text" name="quantidade_defesa_civil" placeholder="Quantidade"></td>
+        </tr>
+        <tr>
+            <td>Outro</td>
+            <td><input type="text" name="quantidade_outro_entidade" placeholder="Quantidade"></td>
+        </tr>
+    </table>
+
+    <div class="section-title">Efetivo</div>
+    <table>
+        <tr>
+            <th>Tipo</th>
+            <th>Quantidade</th>
+        </tr>
+        <tr>
+            <td>Bombeiro Militar</td>
+            <td><input type="text" name="quantidade_bombeiro_militar" placeholder="Quantidade"></td>
+        </tr>
+        <tr>
+            <td>Bombeiro Municipal</td>
+            <td><input type="text" name="quantidade_bombeiro_municipal" placeholder="Quantidade"></td>
+        </tr>
+        <tr>
+            <td>Bombeiro Privado</td>
+            <td><input type="text" name="quantidade_bombeiro_privado" placeholder="Quantidade"></td>
+        </tr>
+        <tr>
+            <td>Bombeiro Voluntário</td>
+            <td><input type="text" name="quantidade_bombeiro_voluntario" placeholder="Quantidade"></td>
+        </tr>
+        <tr>
+            <td>Policial Militar</td>
+            <td><input type="text" name="quantidade_policial_militar" placeholder="Quantidade"></td>
+        </tr>
+        <tr>
+            <td>Polícia Rodoviária Federal</td>
+            <td><input type="text" name="quantidade_policia_rodoviaria_federal_efetivo" placeholder="Quantidade"></td>
+        </tr>
+        <tr>
+            <td>Outro</td>
+            <td><input type="text" name="quantidade_outro_efetivo" placeholder="Quantidade"></td>
+        </tr>
+    </table>
+</fieldset> 
+          
+               <fieldset>
+    <legend class="section-title">Histórico-resumo da Ocorrência</legend>
+    
+    <!-- Caixa de texto para Histórico-resumo da Ocorrência -->
+    <textarea name="historico_resumo_ocorrencia" id="historico_resumo_ocorrencia" style="width: 100%; height: 500px;"></textarea>
+</fieldset>
+
+<!-- Incluindo a biblioteca do CKEditor -->
+<script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
+
+<script>
+    // Inicializando o CKEditor para a caixa de texto de Histórico-resumo da Ocorrência
+    CKEDITOR.replace('historico_resumo_ocorrencia');
+</script>
+          
+         <fieldset>
+    <legend class="section-title">Dados Complementares</legend>
+    
+    <!-- Caixa de texto para Dados Complementares -->
+    <textarea name="dados_complementares" id="dados_complementares" style="width: 100%; height: 500px;"></textarea>
+</fieldset>
+
+<script>
+    // Inicializando o CKEditor para a caixa de texto de Dados Complementares
+    CKEDITOR.replace('dados_complementares');
+</script> 
+          
+          <fieldset>
+    <legend class="section-title">Responsável pelo preenchimento</legend>
+    
+    <!-- Caixa de seleção para responsável -->
+    <select name="responsavel_preenchimento" id="responsavel_preenchimento">
+        <option value="joao_gabriel_silva">João Gabriel da Silva</option>
+        <option value="erivania_freire_cardoso">Erivania Freire Cardoso</option>
+        <option value="monica_lopes_lima">Mônica Lopes de Lima</option>
+    </select>
+</fieldset>
+          
+          <fieldset>
+    <legend class="section-title">Cargo/Função</legend>
+    
+    <!-- Caixa de seleção para cargo -->
+    <select name="cargo_funcao" id="cargo_funcao">
+        <option value="bombeiro_civil">Bombeiro civil</option>
+        <option value="socorrista">Socorrista</option>
+        <option value="bombeiro_civil_socorrista">Bombeiro civil e Socorrista</option>
+    </select>
+</fieldset>
+          
+          <fieldset>
+    <legend class="section-title">Data do Preenchimento</legend>
+    
+    <!-- Caixa de texto para a data -->
+    <input type="date" name="data_preenchimento" id="data_preenchimento">
+</fieldset>
+          
+          <fieldset>
+    <legend class="section-title">Assinatura</legend>
+    
+    <!-- Caixa de texto para assinatura -->
+    <input type="text" name="assinatura" id="assinatura" placeholder="Assine aqui" style="width: 100%;">
+</fieldset>
+          
+          <fieldset>
+    <legend class="section-title">Número do Registro</legend>
+    
+    <!-- Caixa de texto para número do registro -->
+    <input type="text" name="numero_registro" id="numero_registro" placeholder="Digite o número do registro" style="width: 100%;">
+</fieldset>
+      </form>
+    <!-- Botão de envio verde -->
+<button type="submit" style="background-color: #28a745; color: white; border: none; padding: 10px 20px; font-size: 16px; border-radius: 5px; cursor: pointer;">
+    Enviar 🟢
+</button>
+    </div>
+</body>
+</html>
