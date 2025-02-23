@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<!DOCTYPE html><html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +7,7 @@
         body {
             margin: 0;
             padding: 0;
-            background-image: url('Fundosite.png'); /* Caminho para a imagem */
+            background-image: url('Fundosite.png');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -67,89 +66,91 @@
     <div class="content">
         <h1>Bombeiro Civil 2025</h1>
         <p>Bem-vindo ao site de registro de ocorrência.</p>
-    </div>
+    </div><div class="login-container">
+    <h2>Ocorrência24h</h2>
+    <form id="loginForm">
+        <select id="fichaSelect" required>
+            <option value="" disabled selected>Selecione um sistema</option>
+            <option value="ficha">Registro de Ocorrência</option>
+            <option value="orientação">Ficha de Orientações</option>
+            <option value="relatorio">Relatório de Plantão</option>
+            <option value="remocao">Remoção</option>
+            <option value="fichaABNT">Ficha ABNT</option>
+        </select>
+        <input type="number" id="username" placeholder="Usuário (apenas números)" required>
+        <input type="password" id="password" inputmode="numeric" placeholder="Senha (apenas números)" required>
+        <button type="submit">Entrar</button>
+    </form>
+</div>
 
-    <div class="login-container">
-        <h2>Ocorrência24h</h2>
-        <form id="loginForm">
-            <select id="fichaSelect" required>
-                <option value="" disabled selected>Selecione um sistema</option>
-                <option value="ficha">Registro de Ocorrência</option>
-                <option value="orientação">Ficha de Orientações</option>
-                <option value="relatorio">Relatório de Plantão</option>
-                <option value="remocao">Remoção</option> <!-- Nova seleção adicionada -->
-            </select>
-            <input type="number" id="username" placeholder="Usuário (apenas números)" required>
-            <input type="password" id="password" inputmode="numeric" placeholder="Senha (apenas números)" required>
-            <button type="submit">Entrar</button>
-        </form>
-    </div>
+<script>
+    const validUsersFicha = {
+        15191585488: 21012006,
+        54321: 9876,
+        11111: 2222
+    };
 
-    <script>
-        // Lista de usuários válidos para a Ficha Coletiva
-        const validUsersFicha = {
-            15191585488: 21012006,
-            54321: 9876,
-            11111: 2222
-        };
+    const validIndividualUser = {
+        username: 15191585488,
+        password: 21012006
+    };
 
-        // Credenciais exclusivas para a Ficha Individual
-        const validIndividualUser = {
-            username: 15191585488,  // Login exclusivo
-            password: 21012006   // Senha exclusiva
-        };
+    const validRelatorioUsers = {
+        15191585488: 21012006,
+        55555: 6666
+    };
 
-        // Credenciais específicas para o Relatório de Plantão
-        const validRelatorioUsers = {
-            15191585488: 21012006, // Exemplo de login e senha
-            55555: 6666
-        };
+    const validRemocaoUsers = {
+        15191585488: 21012006,
+        67890: 1234
+    };
 
-        // Credenciais para a Remoção
-        const validRemocaoUsers = {
-            15191585488: 21012006, // Exemplo de login e senha para "Remoção"
-            67890: 1234
-        };
+    const validABNTUsers = {
+        15191585488: 21012006
+    };
 
-        document.getElementById('loginForm').addEventListener('submit', function(event) {
-            event.preventDefault();
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+        event.preventDefault();
 
-            const selectedFicha = document.getElementById('fichaSelect').value;
-            const username = parseInt(document.getElementById('username').value, 10); // Converte para número
-            const password = parseInt(document.getElementById('password').value, 10); // Converte para número
+        const selectedFicha = document.getElementById('fichaSelect').value;
+        const username = parseInt(document.getElementById('username').value, 10);
+        const password = parseInt(document.getElementById('password').value, 10);
 
-            if (selectedFicha === "ficha") {
-                // Verifica usuários válidos para a Ficha Coletiva
-                if (validUsersFicha[username] === password) {
-                    window.location.href = "ficha.html"; // Redireciona para a Ficha Coletiva
-                } else {
-                    alert("Usuário ou senha inválidos para a Ficha Coletiva!");
-                }
-            } else if (selectedFicha === "orientação") {
-                // Verifica login exclusivo para a Ficha Individual
-                if (username === validIndividualUser.username && password === validIndividualUser.password) {
-                    window.location.href = "orientação.html"; // Redireciona para a Ficha Individual
-                } else {
-                    alert("Não autorizado!");
-                }
-            } else if (selectedFicha === "relatorio") {
-                // Verifica login para o Relatório de Plantão
-                if (validRelatorioUsers[username] === password) {
-                    window.location.href = "relatório.html"; // Redireciona para o Relatório de Plantão
-                } else {
-                    alert("Usuário ou senha inválidos para o Relatório de Plantão!");
-                }
-            } else if (selectedFicha === "remocao") {
-                // Verifica login para a Remoção
-                if (validRemocaoUsers[username] === password) {
-                    window.location.href = "remocao.html"; // Redireciona para a Remoção
-                } else {
-                    alert("Usuário ou senha inválidos para Remoção!");
-                }
+        if (selectedFicha === "ficha") {
+            if (validUsersFicha[username] === password) {
+                window.location.href = "ficha.html";
             } else {
-                alert("Selecione uma ficha válida!");
+                alert("Usuário ou senha inválidos para a Ficha Coletiva!");
             }
-        });
-    </script>
+        } else if (selectedFicha === "orientação") {
+            if (username === validIndividualUser.username && password === validIndividualUser.password) {
+                window.location.href = "orientação.html";
+            } else {
+                alert("Não autorizado!");
+            }
+        } else if (selectedFicha === "relatorio") {
+            if (validRelatorioUsers[username] === password) {
+                window.location.href = "relatório.html";
+            } else {
+                alert("Usuário ou senha inválidos para o Relatório de Plantão!");
+            }
+        } else if (selectedFicha === "remocao") {
+            if (validRemocaoUsers[username] === password) {
+                window.location.href = "remocao.html";
+            } else {
+                alert("Usuário ou senha inválidos para Remoção!");
+            }
+        } else if (selectedFicha === "fichaABNT") {
+            if (validABNTUsers[username] === password) {
+                window.location.href = "anexoA.html";
+            } else {
+                alert("Usuário ou senha inválidos para a Ficha ABNT!");
+            }
+        } else {
+            alert("Selecione uma ficha válida!");
+        }
+    });
+</script>
+
 </body>
 </html>
