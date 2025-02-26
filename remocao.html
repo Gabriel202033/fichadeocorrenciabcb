@@ -7,7 +7,7 @@ $dbName = 'ocorrencias-remocao';
 
 $conexao = new mysqli($dbHost;$dbUsername;$dbPassword;$dbName);
 
-if(conexao->conect_errno)
+if(conexao->connect_errno)
 {
    echo "Erro";
 }
