@@ -1,3 +1,23 @@
+<?php
+
+$dbHost = 'Localhost';
+$dbUsername = 'root';
+$dbPassword = '21012006';
+$dbName = 'ocorrencias-remocao';
+
+$conexao = new mysqli($dbHost;$dbUsername;$dbPassword;$dbName)
+
+if(conexao->conect-errno)
+{
+   echo "Erro";
+}
+else
+{
+  echo "Conexão efetuada com sucesso";
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -128,7 +148,9 @@
                 <option value="Profissional 2">João Gabriel da Silva</option>
                 <option value="Profissional 2">Mônica Lopes de Lima</option>
             </select></div>
-        </div>        
+        </div>   
+        <input type="submit" value="Enviar">
+
         <button type="button" onclick="baixarPDF()">
             <span class="icon">🖨️</span> Baixar PDF
         </button>
