@@ -1,23 +1,3 @@
-<?php
-
-$dbHost = 'Localhost';
-$dbUsername = 'root';
-$dbPassword = '134679';
-$dbName = 'ocorrencias-remocao';
-
-$conexao = new mysqli($dbHost;$dbUsername;$dbPassword;$dbName);
-
-if($conexao->connect_errno)
-{
-echo "Erro";
-}
-else
-{
-echo "Conexão efetuada com sucesso";
-}
-
-?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -144,9 +124,11 @@ echo "Conexão efetuada com sucesso";
         <div class="container">
             <div class="campo">Profissional: <select name="profissional">
                 <option value="">Selecione</option>
-                <option value="Profissional 1">Erivania Freire Cardoso</option>
-                <option value="Profissional 2">João Gabriel da Silva</option>
-                <option value="Profissional 2">Mônica Lopes de Lima</option>
+                <option value="Erivania freire Cardoso">Erivania Freire Cardoso</option>
+                <option value="João Gabriel da Silva">João Gabriel da Silva</option>
+                <option value="Mônica Lopes de Lima">Mônica Lopes de Lima</option>
+                <option value="Antônio Felipe Sobreira Moreira">Antônio Felipe Sobreira Moreira</option>
+                <option value="outro">Outro</option>
             </select></div>
         </div>   
         <input type="submit" value="Enviar">
